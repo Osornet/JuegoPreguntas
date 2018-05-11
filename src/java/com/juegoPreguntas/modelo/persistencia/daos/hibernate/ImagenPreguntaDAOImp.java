@@ -47,5 +47,15 @@ public class ImagenPreguntaDAOImp implements ImagenPreguntaDAO{
     public List<ImagenPregunta> listarPorPregunta(Pregunta pregunta) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public void abrirSession() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void cerrarSession() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

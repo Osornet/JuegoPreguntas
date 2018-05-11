@@ -14,6 +14,8 @@ import java.util.List;
  * @author osorn
  */
 public interface RespuestaDAO {
+    public void abrirSession();
+    public void cerrarSession();
     public void insertar(Respuesta respuesta);
     public void Editar(Respuesta respuesta);
     public void Eliminar(Respuesta respuesta);

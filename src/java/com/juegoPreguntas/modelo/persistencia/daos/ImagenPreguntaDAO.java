@@ -14,6 +14,8 @@ import java.util.List;
  * @author osorn
  */
 public interface ImagenPreguntaDAO {
+    public void abrirSession();
+    public void cerrarSession();
     public void insertar(ImagenPregunta imagenPregunta);
     public void Editar(ImagenPregunta imagenPregunta);
     public void Eliminar(ImagenPregunta imagenPregunta);

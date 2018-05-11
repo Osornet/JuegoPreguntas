@@ -5,6 +5,7 @@
  */
 package com.juegoPreguntas.modelo.persistencia.daos;
 
+import com.juegoPreguntas.modelo.persistencia.daos.hibernate.HibernateHelper;
 import com.juegoPreguntas.modelo.pojo.Pregunta;
 import java.util.List;
 
@@ -14,6 +15,8 @@ import java.util.List;
  */
 public interface PreguntaDAO {
 
+    public void abrirSession();
+    public void cerrarSession();
     public void insertar(Pregunta pregunta);
     public void Editar(Pregunta pregunta);
     public void Eliminar(Pregunta pregunta);
