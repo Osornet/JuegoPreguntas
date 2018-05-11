@@ -10,6 +10,8 @@ import com.juegoPreguntas.modelo.pojo.ImagenPregunta;
 import com.juegoPreguntas.modelo.pojo.Pregunta;
 import java.util.List;
 
+
+
 /**
  *
  * @author osorn
@@ -22,17 +24,17 @@ public class ImagenPreguntaDAOImp implements ImagenPreguntaDAO{
     }
 
     @Override
-    public void Editar(int id) {
+    public void Editar(ImagenPregunta imagenPregunta) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void Eliminar(int id) {
+    public void Eliminar(ImagenPregunta imagenPregunta) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public ImagenPregunta obtenerPorClave(int id) {
+    public ImagenPregunta obtenerPorClave(ImagenPregunta imagenPregunta) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
