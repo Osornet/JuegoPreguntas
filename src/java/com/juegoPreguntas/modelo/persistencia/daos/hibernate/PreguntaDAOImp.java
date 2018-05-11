@@ -24,6 +24,7 @@ public class PreguntaDAOImp implements PreguntaDAO {
     private Session session = null;
     
 
+    @Override
     public void abrirSession() {
         if (factoria == null) {
             factoria = HibernateHelper.getSessionfactory();
@@ -33,6 +34,7 @@ public class PreguntaDAOImp implements PreguntaDAO {
 
     }
 
+    @Override
     public void cerrarSession() {
         if (session != null) {
             session.close();
@@ -67,7 +69,7 @@ public class PreguntaDAOImp implements PreguntaDAO {
         this.abrirSession();
         transaccion = this.session.beginTransaction();
         
-        this.session.saveOrUpdate(pregunta);
+        this.session.update(pregunta);
         
         transaccion.commit();
         }catch(HibernateException e){
