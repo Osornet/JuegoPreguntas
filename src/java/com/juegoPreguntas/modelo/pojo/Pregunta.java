@@ -25,10 +25,10 @@ public class Pregunta implements Serializable{
     private String descripcion;
     @OneToMany
     @JoinColumn(name = "id_pregunta")
-    private List<Respuesta> Respuestas; 
+    private List<Respuesta> respuestas; 
     @OneToMany
     @JoinColumn(name = "id_pregunta")
-    private List<ImagenPregunta> imgagenes;
+    private List<ImagenPregunta> imagenes;
     
     //CONSTRUCTORES
 
@@ -44,11 +44,11 @@ public class Pregunta implements Serializable{
         this.descripcion = descripcion;
     }
 
-    public Pregunta(int id, String descripcion, List<Respuesta> Respuestas, List<ImagenPregunta> imgagenes) {
+    public Pregunta(int id, String descripcion, List<Respuesta> Respuestas, List<ImagenPregunta> imagenes) {
         this.id = id;
         this.descripcion = descripcion;
-        this.Respuestas = Respuestas;
-        this.imgagenes = imgagenes;
+        this.respuestas = Respuestas;
+        this.imagenes = imagenes;
     }
   
     //SETTERS
@@ -61,12 +61,12 @@ public class Pregunta implements Serializable{
         this.descripcion = descripcion;
     }
 
-    public void setRespuestas(List<Respuesta> Respuestas) {
-        this.Respuestas = Respuestas;
+    public void setRespuestas(List<Respuesta> respuestas) {
+        this.respuestas = respuestas;
     }
 
     public void setImgagenes(List<ImagenPregunta> imgagenes) {
-        this.imgagenes = imgagenes;
+        this.imagenes = imagenes;
     }
     
     //GETTERS
@@ -79,12 +79,12 @@ public class Pregunta implements Serializable{
         return descripcion;
     }
 
-    public List<Respuesta> getRespuestas() {
-        return Respuestas;
+    public List<Respuesta> getrespuestas() {
+        return respuestas;
     }
 
-    public List<ImagenPregunta> getImgagenes() {
-        return imgagenes;
+    public List<ImagenPregunta> getImagenes() {
+        return imagenes;
     }
 
     //HASHCODE and Equals 
