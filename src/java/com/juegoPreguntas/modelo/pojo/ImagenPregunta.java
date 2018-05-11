@@ -5,25 +5,30 @@
  */
 package com.juegoPreguntas.modelo.pojo;
 
-import javax.persistence.Column;
+import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 /**
  *
  * @author osorn
  */
-@Entity(name = "Imagen_pregunta")
-public class ImagenPregunta {
+@Entity
+@Table(name = "imagen_pregunta")
+public class ImagenPregunta implements Serializable{
    @Id
    private int id;
    private String ruta;
-   @Column(name = "id_pregunta")
-   @ManyToOne()
+   @ManyToOne
+   @JoinColumn(name = "id_pregunta")
    private Pregunta pregunta;
-   
-   //SETTERS
+
+    public ImagenPregunta() {
+    }
+    //SETTERS
 
     public void setId(int id) {
         this.id = id;

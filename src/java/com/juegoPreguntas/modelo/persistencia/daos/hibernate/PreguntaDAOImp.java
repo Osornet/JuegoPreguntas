@@ -8,36 +8,124 @@ package com.juegoPreguntas.modelo.persistencia.daos.hibernate;
 import com.juegoPreguntas.modelo.persistencia.daos.PreguntaDAO;
 import com.juegoPreguntas.modelo.pojo.Pregunta;
 import java.util.List;
+import org.hibernate.HibernateException;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 
 /**
  *
  * @author osorn
  */
-public class PreguntaDAOImp implements PreguntaDAO{
+public class PreguntaDAOImp implements PreguntaDAO {
+
+    private SessionFactory factoria = null;
+    private Session session = null;
+    
+
+    public void abrirSession() {
+        if (factoria == null) {
+            factoria = HibernateHelper.getSessionfactory();
+            if (this.session == null) 
+                this.session = this.factoria.openSession();
+        }
+
+    }
+
+    public void cerrarSession() {
+        if (session != null) {
+            session.close();
+            if(factoria != null)
+                factoria.close();
+        }
+    }
 
     @Override
     public void insertar(Pregunta pregunta) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Transaction transaccion = null;
+        try{
+        this.abrirSession();
+        transaccion = this.session.beginTransaction();
+        
+        this.session.save(pregunta);
+        
+        transaccion.commit();
+        }catch(HibernateException e){
+          System.out.println(e.getMessage());
+          if(transaccion != null)
+            transaccion.rollback();
+        }finally{
+            this.cerrarSession();
+        }
     }
 
     @Override
-    public void Editar(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void Editar(Pregunta pregunta) {
+        Transaction transaccion = null;
+        try{
+        this.abrirSession();
+        transaccion = this.session.beginTransaction();
+        
+        this.session.saveOrUpdate(pregunta);
+        
+        transaccion.commit();
+        }catch(HibernateException e){
+          System.out.println(e.getMessage());
+          if(transaccion != null)
+            transaccion.rollback();
+        }finally{
+            this.cerrarSession();
+        }
     }
 
     @Override
-    public void Eliminar(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void Eliminar(Pregunta pregunta) {
+        Transaction transaccion = null;
+        try{
+        this.abrirSession();
+        transaccion = this.session.beginTransaction();
+        
+        this.session.delete(pregunta);
+        
+        transaccion.commit();
+        }catch(HibernateException e){
+          System.out.println(e.getMessage());
+          if(transaccion != null)
+            transaccion.rollback();
+        }finally{
+            this.cerrarSession();
+        } 
     }
 
     @Override
     public Pregunta obtenerPorClave(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Pregunta pregunta = null;
+        try{
+        this.abrirSession();
+        pregunta = (Pregunta)this.session.get(Pregunta.class, id);
+        }catch(HibernateException e){
+            System.out.println(e.getMessage());
+        }finally{
+            this.cerrarSession();
+        }
+        return pregunta;
     }
 
     @Override
     public List<Pregunta> listarTodos() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List<Pregunta> listaDePreguntas = null;
+        String consultaString = "from Pregunta pre";
+        try{
+        this.abrirSession();
+        Query consulta = this.session.createQuery(consultaString);
+        listaDePreguntas = consulta.list();
+        }catch(HibernateException e){
+            System.out.println(e.getMessage());
+        }finally{
+            this.cerrarSession();
+        }
+        return listaDePreguntas;
     }
-    
+
 }

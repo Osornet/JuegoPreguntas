@@ -22,12 +22,12 @@ public class RespuestaDAOImp implements RespuestaDAO{
     }
 
     @Override
-    public void Editar(int id) {
+    public void Editar(Respuesta respuesta) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void Eliminar(int id) {
+    public void Eliminar(Respuesta respuesta) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -45,5 +45,5 @@ public class RespuestaDAOImp implements RespuestaDAO{
     public List<Respuesta> listarPorPregunta(Pregunta pregunta) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }

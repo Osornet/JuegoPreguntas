@@ -15,8 +15,8 @@ import java.util.List;
  */
 public interface RespuestaDAO {
     public void insertar(Respuesta respuesta);
-    public void Editar(int id);
-    public void Eliminar(int id);
+    public void Editar(Respuesta respuesta);
+    public void Eliminar(Respuesta respuesta);
     public Respuesta obtenerPorClave(int id);
     public List<Respuesta> listarTodos();
     public List<Respuesta> listarPorPregunta(Pregunta pregunta);

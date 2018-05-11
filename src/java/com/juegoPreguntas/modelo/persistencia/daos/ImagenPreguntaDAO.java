@@ -7,7 +7,6 @@ package com.juegoPreguntas.modelo.persistencia.daos;
 
 import com.juegoPreguntas.modelo.pojo.ImagenPregunta;
 import com.juegoPreguntas.modelo.pojo.Pregunta;
-import com.juegoPreguntas.modelo.pojo.Respuesta;
 import java.util.List;
 
 /**
@@ -16,9 +15,9 @@ import java.util.List;
  */
 public interface ImagenPreguntaDAO {
     public void insertar(ImagenPregunta imagenPregunta);
-    public void Editar(int id);
-    public void Eliminar(int id);
-    public ImagenPregunta obtenerPorClave(int id);
+    public void Editar(ImagenPregunta imagenPregunta);
+    public void Eliminar(ImagenPregunta imagenPregunta);
+    public ImagenPregunta obtenerPorClave(ImagenPregunta imagenPregunta);
     public List<ImagenPregunta> listarTodos();
     public List<ImagenPregunta> listarPorPregunta(Pregunta pregunta);
 }

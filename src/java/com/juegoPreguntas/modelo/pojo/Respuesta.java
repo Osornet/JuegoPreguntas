@@ -5,24 +5,41 @@
  */
 package com.juegoPreguntas.modelo.pojo;
 
-import javax.persistence.Column;
+import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 /**
  *
  * @author osorn
  */
 @Entity
-public class Respuesta {
+@Table(name = "respuesta")
+public class Respuesta implements Serializable{
     @Id
     private int id;
     private String descripcion;
     private byte correcta;
-    @Column(name = "id_pregunta")
-    @ManyToOne()
+    @ManyToOne
+    @JoinColumn(name = "id_pregunta")
     private Pregunta pregunta;
+
+    public Respuesta() {
+    }
+
+    public Respuesta(int id) {
+        this.id = id;
+    }
+
+    public Respuesta(int id, String descripcion, byte correcta, Pregunta pregunta) {
+        this.id = id;
+        this.descripcion = descripcion;
+        this.correcta = correcta;
+        this.pregunta = pregunta;
+    }
     
     //SETTERS
 
@@ -58,6 +75,33 @@ public class Respuesta {
 
     public Pregunta getPregunta() {
         return pregunta;
+    }
+    
+    //HASH Y EQUALS
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 59 * hash + this.id;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Respuesta other = (Respuesta) obj;
+        if (this.id != other.id) {
+            return false;
+        }
+        return true;
     }
     
 }

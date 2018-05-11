@@ -5,6 +5,8 @@
  */
 package test;
 
+import com.juegoPreguntas.modelo.persistencia.daos.PreguntaDAO;
+import com.juegoPreguntas.modelo.persistencia.daos.hibernate.PreguntaDAOImp;
 import com.juegoPreguntas.modelo.pojo.Pregunta;
 import com.juegoPreguntas.modelo.pojo.Respuesta;
 import org.hibernate.Session;
@@ -19,19 +21,9 @@ import org.hibernate.cfg.Configuration;
 public class Principal {
 
     public static void main(String[] args) {
-        SessionFactory factoria = new Configuration().configure().buildSessionFactory();
-        Session session = factoria.openSession();
-        Transaction transaccion = session.beginTransaction();
        
-        Pregunta pre = (Pregunta)session.get(Pregunta.class, 1);
+        PreguntaDAO pregunta = new PreguntaDAOImp();
         
-        for(Respuesta resp: pre.getRespuestas())
-            System.out.println(resp.getDescripcion());
-        
-        
-        transaccion.commit();
-        session.close();
-        factoria.close();
         
         
         
