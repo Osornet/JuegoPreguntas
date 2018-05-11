@@ -6,7 +6,11 @@
 package com.juegoPreguntas.modelo.pojo;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -20,9 +24,10 @@ import javax.persistence.Table;
 @Table(name = "imagen_pregunta")
 public class ImagenPregunta implements Serializable{
    @Id
+   @GeneratedValue(strategy = GenerationType.AUTO)
    private int id;
    private String ruta;
-   @ManyToOne
+   @ManyToOne(fetch = FetchType.LAZY)
    @JoinColumn(name = "id_pregunta")
    private Pregunta pregunta;
 
@@ -41,7 +46,8 @@ public class ImagenPregunta implements Serializable{
     public void setPregunta(Pregunta pregunta) {
         this.pregunta = pregunta;
     }
-   
+    
+    
     //GETTERS
 
     public int getId() {

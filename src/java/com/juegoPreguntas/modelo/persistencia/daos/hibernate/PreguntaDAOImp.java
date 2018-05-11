@@ -57,8 +57,7 @@ public class PreguntaDAOImp implements PreguntaDAO {
           System.out.println(e.getMessage());
           if(transaccion != null)
             transaccion.rollback();
-        }finally{
-            this.cerrarSession();
+          this.cerrarSession();
         }
     }
 
@@ -76,8 +75,7 @@ public class PreguntaDAOImp implements PreguntaDAO {
           System.out.println(e.getMessage());
           if(transaccion != null)
             transaccion.rollback();
-        }finally{
-            this.cerrarSession();
+          this.cerrarSession();
         }
     }
 
@@ -95,9 +93,8 @@ public class PreguntaDAOImp implements PreguntaDAO {
           System.out.println(e.getMessage());
           if(transaccion != null)
             transaccion.rollback();
-        }finally{
-            this.cerrarSession();
-        } 
+          this.cerrarSession();
+        }
     }
 
     @Override
@@ -108,7 +105,6 @@ public class PreguntaDAOImp implements PreguntaDAO {
         pregunta = (Pregunta)this.session.get(Pregunta.class, id);
         }catch(HibernateException e){
             System.out.println(e.getMessage());
-        }finally{
             this.cerrarSession();
         }
         return pregunta;
@@ -124,7 +120,6 @@ public class PreguntaDAOImp implements PreguntaDAO {
         listaDePreguntas = consulta.list();
         }catch(HibernateException e){
             System.out.println(e.getMessage());
-        }finally{
             this.cerrarSession();
         }
         return listaDePreguntas;

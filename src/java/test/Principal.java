@@ -26,8 +26,11 @@ public class Principal {
     public static void main(String[] args) {
        
         PreguntaDAO preguntaDAO = new PreguntaDAOImp();
-        Pregunta pre = preguntaDAO.obtenerPorClave(1);
-        System.out.println(pre.getDescripcion());
+        
+        preguntaDAO.insertar(new Pregunta("hola perros"));
+        preguntaDAO.cerrarSession();
+        
+        
         
         
         
