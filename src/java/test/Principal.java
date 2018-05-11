@@ -6,9 +6,11 @@
 package test;
 
 import com.juegoPreguntas.modelo.persistencia.daos.PreguntaDAO;
+import com.juegoPreguntas.modelo.persistencia.daos.hibernate.HibernateHelper;
 import com.juegoPreguntas.modelo.persistencia.daos.hibernate.PreguntaDAOImp;
 import com.juegoPreguntas.modelo.pojo.Pregunta;
 import com.juegoPreguntas.modelo.pojo.Respuesta;
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -20,14 +22,6 @@ import org.hibernate.cfg.Configuration;
  */
 public class Principal {
 
-    public static void main(String[] args) {
-       
-        PreguntaDAO pregunta = new PreguntaDAOImp();
-        
-        
-        
-        
-        
-    }
+    
 
 }
