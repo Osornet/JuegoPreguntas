@@ -17,7 +17,9 @@ public class PruebaJavier {
     public static void main(String[] args) {
 
         PreguntaDAOImp pre = new PreguntaDAOImp();
-        Pregunta p = new Pregunta(1, "Pregunta 1");       
+        Pregunta p = new Pregunta();    
+        p.setId(1);
+        p.setDescripcion("Pregunta 1");
         pre.insertar(p);
         
 

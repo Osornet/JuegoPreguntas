@@ -96,7 +96,7 @@ public class PreguntaDAOImp implements PreguntaDAO {
           this.cerrarSession();
         }
     }
-
+    //Obtiene una pregunta
     @Override
     public Pregunta obtenerPorClave(int id) {
         Pregunta pregunta = null;
@@ -109,7 +109,17 @@ public class PreguntaDAOImp implements PreguntaDAO {
         }
         return pregunta;
     }
-
+    //Hacer metodo para generar un registro aleatorio
+    
+    public Pregunta seleccionarPreguntarAleatoria(){
+        int id = 5;
+        
+        return this.obtenerPorClave(id);
+    }
+    //Llamar desde ese metodo a obtenerporclave y retornar la pregunta
+    
+    
+    //Obtiene todas las preguntas
     @Override
     public List<Pregunta> listarTodos() {
         List<Pregunta> listaDePreguntas = null;
