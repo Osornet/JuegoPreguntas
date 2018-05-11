@@ -8,8 +8,9 @@ package com.juegoPreguntas.modelo.pojo;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -21,14 +22,15 @@ import javax.persistence.Table;
 @Table(name = "pregunta")
 public class Pregunta implements Serializable{
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String descripcion;
-    @OneToMany
-    @JoinColumn(name = "id_pregunta")
-    private List<Respuesta> respuestas; 
-    @OneToMany
-    @JoinColumn(name = "id_pregunta")
+    
+    @OneToMany(mappedBy = "pregunta")
+    private List<Respuesta> respuestas;
+    @OneToMany(mappedBy = "pregunta")
     private List<ImagenPregunta> imagenes;
+    
     
     //CONSTRUCTORES
 
@@ -39,17 +41,11 @@ public class Pregunta implements Serializable{
         this.id = id;
     }
 
-    public Pregunta(int id, String descripcion) {
-        this.id = id;
+    public Pregunta(String descripcion) {
         this.descripcion = descripcion;
     }
 
-    public Pregunta(int id, String descripcion, List<Respuesta> Respuestas, List<ImagenPregunta> imagenes) {
-        this.id = id;
-        this.descripcion = descripcion;
-        this.respuestas = Respuestas;
-        this.imagenes = imagenes;
-    }
+   
   
     //SETTERS
 
@@ -65,10 +61,10 @@ public class Pregunta implements Serializable{
         this.respuestas = respuestas;
     }
 
-    public void setImgagenes(List<ImagenPregunta> imgagenes) {
+    public void setImagenes(List<ImagenPregunta> imagenes) {
         this.imagenes = imagenes;
     }
-    
+       
     //GETTERS
 
     public int getId() {
@@ -79,13 +75,15 @@ public class Pregunta implements Serializable{
         return descripcion;
     }
 
-    public List<Respuesta> getrespuestas() {
+    public List<Respuesta> getRespuestas() {
         return respuestas;
     }
 
     public List<ImagenPregunta> getImagenes() {
         return imagenes;
     }
+    
+   
 
     //HASHCODE and Equals 
     @Override
