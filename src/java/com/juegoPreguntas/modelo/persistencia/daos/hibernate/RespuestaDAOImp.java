@@ -56,9 +56,8 @@ public class RespuestaDAOImp implements RespuestaDAO{
           System.out.println(e.getMessage());
           if(transaccion != null)
             transaccion.rollback();
-        }finally{
-            this.cerrarSession();
-        }
+           this.cerrarSession();
+        }            
     }
 
     @Override
@@ -75,8 +74,7 @@ public class RespuestaDAOImp implements RespuestaDAO{
           System.out.println(e.getMessage());
           if(transaccion != null)
             transaccion.rollback();
-        }finally{
-            this.cerrarSession();
+          this.cerrarSession();
         }
     }
 
@@ -94,8 +92,7 @@ public class RespuestaDAOImp implements RespuestaDAO{
           System.out.println(e.getMessage());
           if(transaccion != null)
             transaccion.rollback();
-        }finally{
-            this.cerrarSession();
+          this.cerrarSession();
         }
     }
     //Obtiene una respuesta.
@@ -107,7 +104,6 @@ public class RespuestaDAOImp implements RespuestaDAO{
         respuesta = (Respuesta)this.session.get(Respuesta.class, id);
         }catch(HibernateException e){
             System.out.println(e.getMessage());
-        }finally{
             this.cerrarSession();
         }
         return respuesta;
@@ -123,7 +119,6 @@ public class RespuestaDAOImp implements RespuestaDAO{
         listaDeRespuestas = consulta.list();
         }catch(HibernateException e){
             System.out.println(e.getMessage());
-        }finally{
             this.cerrarSession();
         }
         return listaDeRespuestas;
@@ -141,7 +136,6 @@ public class RespuestaDAOImp implements RespuestaDAO{
         listaDeRespuestas = consulta.list();
         }catch(HibernateException e){
             System.out.println(e.getMessage());
-        }finally{
             this.cerrarSession();
         }
         return listaDeRespuestas;

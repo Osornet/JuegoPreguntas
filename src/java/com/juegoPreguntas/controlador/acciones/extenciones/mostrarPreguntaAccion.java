@@ -6,6 +6,8 @@
 package com.juegoPreguntas.controlador.acciones.extenciones;
 
 import com.juegoPreguntas.controlador.acciones.Accion;
+import com.juegoPreguntas.modelo.persistencia.daos.hibernate.PreguntaDAOImp;
+import com.juegoPreguntas.modelo.pojo.Pregunta;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -17,8 +19,11 @@ public class mostrarPreguntaAccion extends Accion{
 
     @Override
     public String ejecutar(HttpServletRequest request, HttpServletResponse response) {
-        String paginaRespuesta = "";
-        return paginaRespuesta;
+              
+        PreguntaDAOImp dao = new PreguntaDAOImp();
+        Pregunta pregunta = dao.seleccionarPreguntarAleatoria();
+        request.setAttribute("pregunta", pregunta);
+        return "pregunta.jsp";
     }
     
 }
