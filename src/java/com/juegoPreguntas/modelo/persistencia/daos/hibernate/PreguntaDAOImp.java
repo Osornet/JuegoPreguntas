@@ -144,6 +144,22 @@ public class PreguntaDAOImp implements PreguntaDAO {
         }
         return listaDePreguntas;
     }
+    // metodo para tener un puñado de preguntas aleatorias de acuerdo a los parametros
+    @Override
+    public List<Pregunta> seleccionarPreguntasAleatorias(int numeroPreguntas) {
+        List<Pregunta> listaDePreguntas = null;
+        String consultaString = "from Pregunta pre order by rand()";
+        try{
+        this.abrirSession();
+        Query consulta = this.session.createQuery(consultaString);
+        consulta.setMaxResults(numeroPreguntas);
+        listaDePreguntas =(List<Pregunta>)consulta.list();
+        }catch(HibernateException e){
+            System.out.println(e.getMessage());
+            this.cerrarSession();
+        }
+        return listaDePreguntas;
+    }
 
    
 
