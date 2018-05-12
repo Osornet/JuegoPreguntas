@@ -27,11 +27,11 @@ public class Principal {
        
         PreguntaDAO preguntaDAO = new PreguntaDAOImp();
         
-        preguntaDAO.insertar(new Pregunta("hola perros"));
+        Pregunta pre = preguntaDAO.seleccionarPreguntarAleatoria();
+        
+        System.out.println(pre.getDescripcion());
+        
         preguntaDAO.cerrarSession();
-        
-        
-        
         
         
         

@@ -21,6 +21,7 @@ public interface PreguntaDAO {
     public void Editar(Pregunta pregunta);
     public void Eliminar(Pregunta pregunta);
     public Pregunta obtenerPorClave(int id);
+    public Pregunta seleccionarPreguntarAleatoria();
     public List<Pregunta> listarTodos();
     
     

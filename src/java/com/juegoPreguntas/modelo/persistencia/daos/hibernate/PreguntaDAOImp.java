@@ -111,10 +111,20 @@ public class PreguntaDAOImp implements PreguntaDAO {
     }
     //Hacer metodo para generar un registro aleatorio
     
+    @Override
     public Pregunta seleccionarPreguntarAleatoria(){
-        int id = 5;
-        
-        return this.obtenerPorClave(id);
+        Pregunta pregunta = null;
+        String consultaString = "from Pregunta pre order by rand()";
+        try{
+        this.abrirSession();
+        Query consulta = this.session.createQuery(consultaString);
+        consulta.setMaxResults(1);
+        pregunta =(Pregunta)consulta.list().get(0);
+        }catch(HibernateException e){
+            System.out.println(e.getMessage());
+            this.cerrarSession();
+        }
+        return pregunta;
     }
     //Llamar desde ese metodo a obtenerporclave y retornar la pregunta
     
@@ -134,5 +144,7 @@ public class PreguntaDAOImp implements PreguntaDAO {
         }
         return listaDePreguntas;
     }
+
+   
 
 }
