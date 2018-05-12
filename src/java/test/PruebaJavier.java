@@ -6,7 +6,9 @@
 package test;
 
 import com.juegoPreguntas.modelo.persistencia.daos.hibernate.PreguntaDAOImp;
+import com.juegoPreguntas.modelo.persistencia.daos.hibernate.RespuestaDAOImp;
 import com.juegoPreguntas.modelo.pojo.Pregunta;
+import com.juegoPreguntas.modelo.pojo.Respuesta;
 
 /**
  *
@@ -16,11 +18,14 @@ public class PruebaJavier {
     
     public static void main(String[] args) {
 
-        PreguntaDAOImp pre = new PreguntaDAOImp();
-        Pregunta p = new Pregunta();    
-        p.setId(1);
-        p.setDescripcion("Pregunta 1");
-        pre.insertar(p);
+        RespuestaDAOImp daores = new RespuestaDAOImp();
+        Respuesta r = new Respuesta(); 
+        Pregunta pregunta = new Pregunta();
+        pregunta.setId(1);
+        r.setDescripcion("Respuesta correcta");
+        r.setCorrecta((byte)1);
+        r.setPregunta(pregunta);
+        daores.insertar(r);
         
 
     }
