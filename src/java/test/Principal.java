@@ -10,6 +10,7 @@ import com.juegoPreguntas.modelo.persistencia.daos.hibernate.HibernateHelper;
 import com.juegoPreguntas.modelo.persistencia.daos.hibernate.PreguntaDAOImp;
 import com.juegoPreguntas.modelo.pojo.Pregunta;
 import com.juegoPreguntas.modelo.pojo.Respuesta;
+import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -27,11 +28,15 @@ public class Principal {
        
         PreguntaDAO preguntaDAO = new PreguntaDAOImp();
         
-        preguntaDAO.insertar(new Pregunta("hola perros"));
+//        Pregunta pre = preguntaDAO.seleccionarPreguntarAleatoria();
+//        
+//        System.out.println(pre.getDescripcion());
+        
+        List<Pregunta> listaDePreguntasAleatorias = preguntaDAO.seleccionarPreguntasAleatorias(2);
+        
+        for(Pregunta pregunta : listaDePreguntasAleatorias)
+            System.out.println(pregunta.getDescripcion());
         preguntaDAO.cerrarSession();
-        
-        
-        
         
         
         
