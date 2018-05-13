@@ -23,6 +23,7 @@ public class mostrarPreguntaAccion extends Accion{
         PreguntaDAOImp dao = new PreguntaDAOImp();
         Pregunta pregunta = dao.seleccionarPreguntarAleatoria();
         request.setAttribute("pregunta", pregunta);
+        
         return "pregunta.jsp";
     }
     

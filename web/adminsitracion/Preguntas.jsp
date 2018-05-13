@@ -3,32 +3,76 @@
     Created on : 12/05/2018, 05:04:23 PM
     Author     : osorn
 --%>
+<script src="../JS/jquery-3.3.1.min.js" type="text/javascript"></script>
+<script src="../JS/Preguntas.js" type="text/javascript"></script>
+<script src="../CSS/materialize/js/materialize.min.js" type="text/javascript"></script>
+<link href="../CSS/fondopreguntas.css" rel="stylesheet" type="text/css"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+<link href="../CSS/materialize/css/materialize.css" rel="stylesheet" type="text/css"/>
+<link href="../CSS/palette.css" rel="stylesheet" type="text/css"/>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es-CO">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <script src="../JS/jquery-3.3.1.min.js" type="text/javascript"></script>
-        <script src="../JS/Preguntas.js" type="text/javascript"></script>
+
         <title>Preguntas</title>
     </head>
-    <body>
-        <form  action="InsertarPregunta.pre" method="post">
-            <p><label for="descripcion">Descripcion:</label></p>
-            <p><textarea name = "descripcion" id="descripcion">Escriba la descripcion aqui ...</textarea></p>
-            <p id = "opcion">+ Opcion</p>
-            <div id = "opciones"></div>
-            <p><label for="descripcionRespuesta">Opcion: </p>
-            <p>
-                <input type="text" name="descripcionRespuesta"/> 
-                <label for = "esCorrecta">es correcta</label>
-                <input type="radio" name = "esCorrecta" value = "1"/>
-            </p>    
-            <h3 hidden="hidden">Opciones</h3>
-            
-            
-            <input type="submit" value="Guardar">
-        </form>
+    <body id="fondo">
+
+        <div class="row">
+            <div class="col s12 m12">
+                <nav class="default-primary-color">
+                    <div class="nav-wrapper">
+
+                        <ul class="center hide-on-med-and-down">
+                            <li><a href=""><i class="material-icons left">add_circle</i>Añadir Pregunta</a></li>
+                            <li><a href=""><i class="material-icons left">view_module</i>Mostrar Preguntas</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col S6 m6 offset-m3 offset-s3">
+
+                <div class="card-panel">
+
+                    <div class="card-content">
+                        <h4>
+                            <span class="card-title black-text">AÑADIR PREGUNTA</span>
+                        </h4>
+                        <form action="InsertarPregunta.pre" method="post">
+                            <div class="input-field">
+                                <i class="material-icons prefix">help</i>
+                                <textarea id="textarea" class="materialize-textarea"></textarea>
+                                <label for="textarea">ESCRIBA LA PREGUNTA</label>
+                            </div>
+                            <h4>OPCIONES DE RESPUESTA</h4>
+
+                            <a class="btn-floating pulse" id="añadir"><i class="material-icons">add</i></a>
+                            <div id = "opciones">                               
+
+                            </div><br>
+
+                            <button class="btn waves-effect accent-color" type="submit" name="action">Guardar
+                                <i class="material-icons right">save</i>
+                            </button>
+
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+
     </body>
 </html>

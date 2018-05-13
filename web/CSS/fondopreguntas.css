@@ -4,20 +4,20 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
 /* 
-    Created on : 12/05/2018, 12:13:58 AM
+    Created on : 12/05/2018, 08:52:36 PM
     Author     : JAVIER
 */
 body{
     font-family: 'Roboto Slab', serif;
-    font-size: 100px;
 }
-#fondo {
-    
-    background-image: url('../Imagenes/fondo.jpg');
+
+#fondo {    
+    background-image: url('../Imagenes/190.jpg');
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-attachment: fixed;
 }
-#botoninicio{    
-    font-size: 40px;      
-}
+
+
+
+

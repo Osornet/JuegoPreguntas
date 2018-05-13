@@ -1,21 +1,26 @@
 
-$(document).ready(function(){
+$(document).ready(function () {
     var i = 1;
-  
-  $("#opcion").click(function(){
-      
-      $("#opciones").append("<p><label for='Opcion"+i+"'>Opcion "+i+": </p> \n\
-                            <p> \n\
-                                <input type='text' name='Opcion"+i+"'/> \n\
-                                <label for = 'esCorrecta'>es correcta</label>   \n\
-                                <input type='radio' name = 'esCorrecta' value = 'Opcion"+i+"'/>   \n\
-                            </p>    ");
-  
-  i++;
-  });
-  
+
+    $("#añadir").click(function () {
+
+        $("#opciones").append(" <div class='row'> <div class='input-field col s9 m9'>\n\
+                                <input id='opcion" + i + "' name='opcion'" + i + "' type='text' class='validate'>\n\
+                                <label for='opcion" + i + "'>opcion " + i + "</label>\n\
+                                </div>\n\
+                                <div class='col s3 m3'>\n\
+                                <label>\n\
+                                <input id='correcta' name='correcta' type='radio' value='opcion" + i + "'/>\n\
+                                <span>correcta?</span>\n\
+                                </label>\n\
+                                </div>\n\
+                                </div>"
+                );
+
+        i++;
+    });
+
 });
-        
-        
+
 
 
