@@ -6,8 +6,10 @@
 package com.juegoPreguntas.controlador.acciones.extenciones;
 
 import com.juegoPreguntas.controlador.acciones.Accion;
+import com.juegoPreguntas.modelo.persistencia.daos.PreguntaDAO;
 import com.juegoPreguntas.modelo.persistencia.daos.hibernate.PreguntaDAOImp;
 import com.juegoPreguntas.modelo.pojo.Pregunta;
+import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -15,16 +17,15 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author osorn
  */
-public class mostrarPreguntaAccion extends Accion{
+public class MostrarListadoPreguntasAccion extends Accion{
 
     @Override
     public String ejecutar(HttpServletRequest request, HttpServletResponse response) {
-              
-        PreguntaDAOImp dao = new PreguntaDAOImp();
-        Pregunta pregunta = dao.seleccionarPreguntarAleatoria();
-        request.getSession().setAttribute("pregunta", pregunta);
-        
-        return "pregunta.jsp";
+        PreguntaDAO preguntaDAO = new PreguntaDAOImp(); 
+        List<Pregunta> listaDePreguntas = preguntaDAO.listarTodos();
+        request.getSession().setAttribute("listaDePreguntas", listaDePreguntas);
+        return "MostrarPreguntas.jsp";
     }
+
     
 }

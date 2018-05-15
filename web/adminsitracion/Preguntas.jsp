@@ -29,7 +29,7 @@
 
                         <ul class="center hide-on-med-and-down">
                             <li><a href=""><i class="material-icons left">add_circle</i>Añadir Pregunta</a></li>
-                            <li><a href=""><i class="material-icons left">view_module</i>Mostrar Preguntas</a></li>
+                            <li><a href="MostrarListadoPreguntas.pre"><i class="material-icons left">view_module</i>Mostrar Preguntas</a></li>
                         </ul>
                     </div>
                 </nav>
