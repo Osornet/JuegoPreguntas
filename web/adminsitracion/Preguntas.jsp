@@ -48,8 +48,8 @@
                         <form action="InsertarPregunta.pre" method="post">
                             <div class="input-field">
                                 <i class="material-icons prefix">help</i>
-                                <textarea id="textarea" class="materialize-textarea"></textarea>
-                                <label for="textarea">ESCRIBA LA PREGUNTA</label>
+                                <textarea id="pregunta" name = "pregunta" class="materialize-textarea"></textarea>
+                                <label for="preguntaDescripcion">ESCRIBA LA PREGUNTA</label>
                             </div>
                             <h4>OPCIONES DE RESPUESTA</h4>
 

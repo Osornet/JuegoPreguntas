@@ -32,15 +32,16 @@ public class controladorPreguntas extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-            String urlServlet = request.getServletPath();
-            Accion accion = Accion.getInstance(urlServlet);
-            
-           if(accion!=null)
-               response.sendRedirect(accion.ejecutar(request, response));
-           else
-               response.sendError(404);
-           
+
+        String urlServlet = request.getServletPath();
+        Accion accion = Accion.getInstance(urlServlet);
+
+        if (accion != null) {
+            response.sendRedirect(accion.ejecutar(request, response));
+        } else {
+            response.sendError(404);
+        }
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

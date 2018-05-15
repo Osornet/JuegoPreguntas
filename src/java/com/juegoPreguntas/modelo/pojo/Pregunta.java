@@ -7,10 +7,12 @@ package com.juegoPreguntas.modelo.pojo;
 
 import java.io.Serializable;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -26,9 +28,10 @@ public class Pregunta implements Serializable{
     private int id;
     private String descripcion;
     
-    @OneToMany(mappedBy = "pregunta")
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_pregunta")
     private List<Respuesta> respuestas;
-    @OneToMany(mappedBy = "pregunta")
+    @OneToMany(mappedBy = "pregunta", cascade = CascadeType.PERSIST)
     private List<ImagenPregunta> imagenes;
     
     
@@ -43,6 +46,11 @@ public class Pregunta implements Serializable{
 
     public Pregunta(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    public Pregunta(String descripcion, List<Respuesta> respuestas) {
+        this.descripcion = descripcion;
+        this.respuestas = respuestas;
     }
 
    

@@ -19,9 +19,13 @@ public abstract class Accion {
        
     public static Accion getInstance(String urlServlet){
         //extraigo el nombre de la accion
-        String nombreAccion = urlServlet.substring(1, urlServlet.length()-4);
-        String nombreClaseFull = Accion.class.getPackage().getName()+"."+nombreAccion+"Accion";
-        
+        String nombreAccion = null;
+            if(urlServlet.startsWith("/adminsitracion/"))
+                nombreAccion = urlServlet.substring(16, urlServlet.length()-4);
+            else
+                nombreAccion = urlServlet.substring(1, urlServlet.length()-4);
+         
+        String nombreClaseFull = "com.juegoPreguntas.controlador.acciones.extenciones."+nombreAccion+"Accion";
         Accion accion = null;
         
         try {

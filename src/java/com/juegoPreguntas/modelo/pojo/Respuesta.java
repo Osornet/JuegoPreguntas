@@ -6,6 +6,7 @@
 package com.juegoPreguntas.modelo.pojo;
 
 import java.io.Serializable;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -27,8 +28,8 @@ public class Respuesta implements Serializable{
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String descripcion;
-    private byte correcta;
-    @ManyToOne(fetch = FetchType.LAZY)
+    private int correcta;
+    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn(name = "id_pregunta")
     private Pregunta pregunta;
 
@@ -39,11 +40,17 @@ public class Respuesta implements Serializable{
         this.id = id;
     }
 
-    public Respuesta(String descripcion, byte correcta, Pregunta pregunta) {
+    public Respuesta(String descripcion, int correcta, Pregunta pregunta) {
         this.descripcion = descripcion;
         this.correcta = correcta;
         this.pregunta = pregunta;
     }
+
+    public Respuesta(String descripcion, int correcta) {
+        this.descripcion = descripcion;
+        this.correcta = correcta;
+    }
+    
     
     //SETTERS
 
@@ -55,7 +62,7 @@ public class Respuesta implements Serializable{
         this.descripcion = descripcion;
     }
 
-    public void setCorrecta(byte correcta) {
+    public void setCorrecta(int correcta) {
         this.correcta = correcta;
     }
 
@@ -73,7 +80,7 @@ public class Respuesta implements Serializable{
         return descripcion;
     }
 
-    public byte getCorrecta() {
+    public int getCorrecta() {
         return correcta;
     }
 

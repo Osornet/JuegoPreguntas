@@ -6,10 +6,13 @@
 package test;
 
 import com.juegoPreguntas.modelo.persistencia.daos.PreguntaDAO;
+import com.juegoPreguntas.modelo.persistencia.daos.RespuestaDAO;
 import com.juegoPreguntas.modelo.persistencia.daos.hibernate.HibernateHelper;
 import com.juegoPreguntas.modelo.persistencia.daos.hibernate.PreguntaDAOImp;
+import com.juegoPreguntas.modelo.persistencia.daos.hibernate.RespuestaDAOImp;
 import com.juegoPreguntas.modelo.pojo.Pregunta;
 import com.juegoPreguntas.modelo.pojo.Respuesta;
+import java.util.ArrayList;
 import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -25,18 +28,19 @@ public class Principal {
 
 
     public static void main(String[] args) {
-       
         PreguntaDAO preguntaDAO = new PreguntaDAOImp();
+        Pregunta pregunta = preguntaDAO.obtenerPorClave(14);
         
-//        Pregunta pre = preguntaDAO.seleccionarPreguntarAleatoria();
-//        
-//        System.out.println(pre.getDescripcion());
-        
-        List<Pregunta> listaDePreguntasAleatorias = preguntaDAO.seleccionarPreguntasAleatorias(2);
-        
-        for(Pregunta pregunta : listaDePreguntasAleatorias)
-            System.out.println(pregunta.getDescripcion());
+        for(Respuesta resp : pregunta.getRespuestas())
+            System.out.println(resp.getDescripcion());
+       
         preguntaDAO.cerrarSession();
+        
+        
+        
+        
+        
+        
         
         
         
