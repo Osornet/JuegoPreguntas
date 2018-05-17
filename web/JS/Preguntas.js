@@ -10,7 +10,7 @@ $(document).ready(function () {
                                 </div>\n\
                                 <div class='col s3 m3'>\n\
                                 <label>\n\
-                                <input id='correcta' name='correcta' type='radio' value='"+i+"'/>\n\
+                                <input id='correcta' name='correcta' type='radio' value='" + i + "'/>\n\
                                 <span>correcta?</span>\n\
                                 </label>\n\
                                 </div>\n\
@@ -19,8 +19,17 @@ $(document).ready(function () {
 
         i++;
     });
+    
+    //Cargo las preguntas por ajax
+    $("#cargarpreguntas").click(function () {
+        var div = $("#preguntas");
+        var url = "MostrarListadoPreguntas.pre";
+        $(div).load(url);
+    });
 
 });
+
+
 
 
 

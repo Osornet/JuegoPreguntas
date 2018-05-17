@@ -22,21 +22,22 @@
     </head>
     <body id="fondo">
 
-        <div class="row">
+        <div>
             <div class="col s12 m12">
                 <nav class="default-primary-color">
                     <div class="nav-wrapper">
 
                         <ul class="center hide-on-med-and-down">
                             <li><a href=""><i class="material-icons left">add_circle</i>Añadir Pregunta</a></li>
-                            <li><a href="MostrarListadoPreguntas.pre"><i class="material-icons left">view_module</i>Mostrar Preguntas</a></li>
+                            <li><a id="cargarpreguntas"><i class="material-icons left">view_module</i>Mostrar Preguntas</a></li>
                         </ul>
                     </div>
                 </nav>
             </div>
 
-        </div>
-        <div class="row">
+        </div><br>
+        
+        <div class="row" id="preguntas">
             <div class="col S6 m6 offset-m3 offset-s3">
 
                 <div class="card-panel">

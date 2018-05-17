@@ -27,4 +27,6 @@ public class mostrarPreguntaAccion extends Accion{
         return "pregunta.jsp";
     }
     
+  
+    
 }
