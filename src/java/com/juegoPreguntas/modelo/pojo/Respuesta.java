@@ -27,7 +27,8 @@ public class Respuesta implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    private String descripcion;
+    @Column(name = "ruta_imagen")
+    private String rutaImagen;
     private int correcta;
     @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn(name = "id_pregunta")
@@ -40,60 +41,53 @@ public class Respuesta implements Serializable{
         this.id = id;
     }
 
-    public Respuesta(String descripcion, int correcta, Pregunta pregunta) {
-        this.descripcion = descripcion;
+    public Respuesta(String rutaImagen, int correcta) {
+        this.rutaImagen = rutaImagen;
+        this.correcta = correcta;
+    }
+    
+    public Respuesta(String rutaImagen, int correcta, Pregunta pregunta) {
+        this.rutaImagen = rutaImagen;
         this.correcta = correcta;
         this.pregunta = pregunta;
     }
-
-    public Respuesta(String descripcion, int correcta) {
-        this.descripcion = descripcion;
-        this.correcta = correcta;
-    }
-    
-    
-    //SETTERS
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
-    public void setCorrecta(int correcta) {
-        this.correcta = correcta;
-    }
-
-    public void setPregunta(Pregunta pregunta) {
-        this.pregunta = pregunta;
-    }
-    
-    //GETTERS
 
     public int getId() {
         return id;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getRutaImagen() {
+        return rutaImagen;
+    }
+
+    public void setRutaImagen(String rutaImagen) {
+        this.rutaImagen = rutaImagen;
     }
 
     public int getCorrecta() {
         return correcta;
     }
 
+    public void setCorrecta(int correcta) {
+        this.correcta = correcta;
+    }
+
     public Pregunta getPregunta() {
         return pregunta;
     }
-    
-    //HASH Y EQUALS
+
+    public void setPregunta(Pregunta pregunta) {
+        this.pregunta = pregunta;
+    }
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 59 * hash + this.id;
+        int hash = 7;
+        hash = 47 * hash + this.id;
         return hash;
     }
 
@@ -114,5 +108,7 @@ public class Respuesta implements Serializable{
         }
         return true;
     }
+
+   
     
 }
