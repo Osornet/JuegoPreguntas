@@ -30,6 +30,7 @@ public class Pregunta implements Serializable{
     private String descripcion;
     @Column(name="ruta_imagen")
     private String rutaImagen;
+    private String nivel;
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_pregunta")
     private List<Respuesta> respuestas;
@@ -52,14 +53,21 @@ public class Pregunta implements Serializable{
         this.rutaImagen = rutaImagen;
     }
 
-    public Pregunta(String descripcion, String rutaImagen, List<Respuesta> respuestas) {
+    public Pregunta(String descripcion, String rutaImagen, String nivel, List<Respuesta> respuestas) {
         this.descripcion = descripcion;
-        this.respuestas = respuestas;
         this.rutaImagen = rutaImagen;
+        this.nivel = nivel;
+        this.respuestas = respuestas;
     }
 
-    //SETTERS
+    public String getNivel() {
+        return nivel;
+    }
 
+    public void setNivel(String nivel) {
+        this.nivel = nivel;
+    }
+   
     public void setId(int id) {
         this.id = id;
     }
