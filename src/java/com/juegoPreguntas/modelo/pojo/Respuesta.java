@@ -27,6 +27,7 @@ public class Respuesta implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+    private String descripcion;
     @Column(name = "ruta_imagen")
     private String rutaImagen;
     private int correcta;
