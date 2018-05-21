@@ -8,6 +8,7 @@ package com.juegoPreguntas.modelo.pojo;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -27,13 +28,13 @@ public class Pregunta implements Serializable{
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String descripcion;
-    
+    @Column(name="ruta_imagen")
+    private String rutaImagen;
+    private String nivel;
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_pregunta")
     private List<Respuesta> respuestas;
-    @OneToMany(mappedBy = "pregunta", cascade = CascadeType.PERSIST)
-    private List<ImagenPregunta> imagenes;
-    
+       
     
     //CONSTRUCTORES
 
@@ -44,19 +45,29 @@ public class Pregunta implements Serializable{
         this.id = id;
     }
 
-    public Pregunta(String descripcion) {
+    public Pregunta(String rutaImagen){
+        this.rutaImagen = rutaImagen;
+    }
+    public Pregunta(String descripcion, String rutaImagen) {
         this.descripcion = descripcion;
+        this.rutaImagen = rutaImagen;
     }
 
-    public Pregunta(String descripcion, List<Respuesta> respuestas) {
+    public Pregunta(String descripcion, String rutaImagen, String nivel, List<Respuesta> respuestas) {
         this.descripcion = descripcion;
+        this.rutaImagen = rutaImagen;
+        this.nivel = nivel;
         this.respuestas = respuestas;
     }
 
-   
-  
-    //SETTERS
+    public String getNivel() {
+        return nivel;
+    }
 
+    public void setNivel(String nivel) {
+        this.nivel = nivel;
+    }
+   
     public void setId(int id) {
         this.id = id;
     }
@@ -69,10 +80,10 @@ public class Pregunta implements Serializable{
         this.respuestas = respuestas;
     }
 
-    public void setImagenes(List<ImagenPregunta> imagenes) {
-        this.imagenes = imagenes;
+    public void setRutaImagen(String rutaImagen) {
+        this.rutaImagen = rutaImagen;
     }
-       
+    
     //GETTERS
 
     public int getId() {
@@ -87,12 +98,10 @@ public class Pregunta implements Serializable{
         return respuestas;
     }
 
-    public List<ImagenPregunta> getImagenes() {
-        return imagenes;
+    public String getRutaImagen() {
+        return rutaImagen;
     }
-    
    
-
     //HASHCODE and Equals 
     @Override
     public int hashCode() {
