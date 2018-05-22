@@ -6,11 +6,14 @@
 <script src="../JS/jquery-3.3.1.min.js" type="text/javascript"></script>
 <script src="../JS/Preguntas.js" type="text/javascript"></script>
 <script src="../CSS/materialize/js/materialize.min.js" type="text/javascript"></script>
+<script src="../JS/sweetalert2.all.min.js" type="text/javascript"></script>
+<link href="../CSS/sweetalert2.css" rel="stylesheet" type="text/css"/>
 <link href="../CSS/fondopreguntas.css" rel="stylesheet" type="text/css"/>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
 <link href="../CSS/materialize/css/materialize.css" rel="stylesheet" type="text/css"/>
 <link href="../CSS/palette.css" rel="stylesheet" type="text/css"/>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
