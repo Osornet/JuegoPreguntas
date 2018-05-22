@@ -29,8 +29,8 @@ public class Juego {
     }
     
     public int cambioDeTurno(){
-        turno++;
-        preguntaIndex++;
+        this.turno++;
+        this.preguntaIndex++;
         if(turno % (cantidadJugadores-1)> 0){
             this.turno = 0;
         }
