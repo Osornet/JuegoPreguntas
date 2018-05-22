@@ -40,15 +40,17 @@ made subject to such option by the copyright holder.
 Contributor(s):
 -->
 <hibernate-configuration>
-    <session-factory>
-        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="connection.url">jdbc:mysql://localhost/juego?useSSL=false</property>
-        <property name="connection.username">root</property>
-        <property name="connection.password">1234</property> <!--Recuedele cambiarle la contraseña cuando lo vaya a utilizar-->
-        <property name="connection.pool_size">5</property>
-        <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
-        <property name="show_sql">true</property>
-        <mapping class= "com.juegoPreguntas.modelo.pojo.Pregunta"/>
-        <mapping class= "com.juegoPreguntas.modelo.pojo.Respuesta"/>
-    </session-factory>
+  <session-factory>
+    <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="connection.url">jdbc:mysql://localhost/juego?useSSL=false</property>
+    <property name="connection.username">root</property>
+    <property name="connection.password">1234</property>
+    <!--Recuedele cambiarle la contraseña cuando lo vaya a utilizar-->
+    <property name="connection.pool_size">5</property>
+    <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+    <property name="show_sql">true</property>
+    <mapping class="com.juegoPreguntas.modelo.pojo.Pregunta"/>
+    <mapping class="com.juegoPreguntas.modelo.pojo.Respuesta"/>
+    <mapping class="com.juegoPreguntas.modelo.pojo.Jugador"/>
+  </session-factory>
 </hibernate-configuration>
