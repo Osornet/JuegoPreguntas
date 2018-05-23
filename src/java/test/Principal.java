@@ -5,20 +5,12 @@
  */
 package test;
 
-import com.juegoPreguntas.modelo.persistencia.daos.PreguntaDAO;
-import com.juegoPreguntas.modelo.persistencia.daos.RespuestaDAO;
-import com.juegoPreguntas.modelo.persistencia.daos.hibernate.HibernateHelper;
-import com.juegoPreguntas.modelo.persistencia.daos.hibernate.PreguntaDAOImp;
-import com.juegoPreguntas.modelo.persistencia.daos.hibernate.RespuestaDAOImp;
-import com.juegoPreguntas.modelo.pojo.Pregunta;
-import com.juegoPreguntas.modelo.pojo.Respuesta;
-import java.util.ArrayList;
+import com.juegoPreguntas.modelo.persistencia.daos.*;
+import com.juegoPreguntas.modelo.pojo.*;
+import com.juegoPreguntas.modelo.persistencia.daos.hibernate.*;
+
 import java.util.List;
-import org.hibernate.HibernateException;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
-import org.hibernate.cfg.Configuration;
+
 
 /**
  *
@@ -28,20 +20,11 @@ public class Principal {
 
 
     public static void main(String[] args) {
-        PreguntaDAO preguntaDAO = new PreguntaDAOImp();
-        Pregunta pregunta = new Pregunta();
-        
-       
-        preguntaDAO.cerrarSession();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+       JugadorDAO jugadorDAO = new JugadorDAOImp();
+       Jugador jugador = jugadorDAO.obtenerPorClave(28);
+       jugador.setPuntaje(20);
+       jugadorDAO.Editar(jugador);
+       jugadorDAO.cerrarSession();
     }
 
 
