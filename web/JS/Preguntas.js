@@ -1,11 +1,11 @@
 
 $(document).ready(function () {
-    swal({
-  title: 'Error!',
-  text: 'Do you want to continue',
-  type: 'error',
-  confirmButtonText: 'Cool'
-});
+    //swal({
+    //    title: 'Error!',
+    //  text: 'Do you want to continue',
+    //type: 'error',
+    //  confirmButtonText: 'Cool'
+    // });
     var i = 1;
 
     $("#añadir").click(function () {
@@ -25,7 +25,7 @@ $(document).ready(function () {
 
         i++;
     });
-    
+
     //Cargo las preguntas por ajax
     $("#cargarpreguntas").click(function () {
         var div = $("#preguntas");

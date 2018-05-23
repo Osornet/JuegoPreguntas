@@ -14,6 +14,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Preguntas a Mostrar</title>
     </head>
+    <body>
     
         <div>
             <table class="striped centered" style="background-color: white">
@@ -67,6 +68,6 @@
                     </div>-->
                 </div>
             
-        
+        </body>
     
 </html>

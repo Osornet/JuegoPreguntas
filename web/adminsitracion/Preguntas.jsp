@@ -14,7 +14,6 @@
 <link href="../CSS/materialize/css/materialize.css" rel="stylesheet" type="text/css"/>
 <link href="../CSS/palette.css" rel="stylesheet" type="text/css"/>
 
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es-CO">
