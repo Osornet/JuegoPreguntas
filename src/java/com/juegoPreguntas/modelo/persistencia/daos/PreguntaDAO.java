@@ -23,6 +23,8 @@ public interface PreguntaDAO {
     public Pregunta obtenerPorClave(int id);
     public Pregunta seleccionarPreguntarAleatoria();
     public List<Pregunta> seleccionarPreguntasAleatorias(int numeroPreguntas);
+    public List<Pregunta> seleccionarPreguntasPorNivel(int nivel,int numeroPreguntas);
+    public List<Pregunta> seleccionarPreguntasPorNivel(int nivel);
     public List<Pregunta> listarTodos();
     
     
