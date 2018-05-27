@@ -8,9 +8,9 @@ package test;
 import com.juegoPreguntas.modelo.persistencia.daos.*;
 import com.juegoPreguntas.modelo.pojo.*;
 import com.juegoPreguntas.modelo.persistencia.daos.hibernate.*;
+import java.util.ArrayList;
 
 import java.util.List;
-
 
 /**
  *
@@ -18,15 +18,22 @@ import java.util.List;
  */
 public class Principal {
 
-
     public static void main(String[] args) {
-       PreguntaDAO preguntaDAO = new PreguntaDAOImp();
-       
-       List<Pregunta> preguntas = preguntaDAO.seleccionarPreguntasPorNivel(1,1);
-       for(Pregunta pregunta:preguntas)
-            System.out.println(pregunta.getDescripcion());
-       preguntaDAO.cerrarSession();
+        List<Jugador> listaDeJugadores = new ArrayList<Jugador>();
+        Jugador j1 = new Jugador();
+        j1.setNombre("Alejandro");
+        Jugador j2 = new Jugador();
+        j2.setNombre("Pedro");
+        listaDeJugadores.add(j1);
+        listaDeJugadores.add(j2);
+        Juego juego = new Juego(listaDeJugadores);
+        
+        juego.CambiarTurno();
+        System.out.println(juego.getJugadorActual().getNombre());
+        juego.CambiarTurno();
+        System.out.println(juego.getJugadorActual().getNombre());
+        juego.CambiarTurno();
+        System.out.println(juego.getJugadorActual().getNombre());
     }
-
 
 }

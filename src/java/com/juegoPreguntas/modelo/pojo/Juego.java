@@ -5,51 +5,83 @@
  */
 package com.juegoPreguntas.modelo.pojo;
 
-import java.util.LinkedList;
+import com.juegoPreguntas.modelo.persistencia.daos.PreguntaDAO;
+import com.juegoPreguntas.modelo.persistencia.daos.hibernate.PreguntaDAOImp;
 import java.util.List;
-import java.util.Queue;
 
 /**
  *
  * @author osorn
  */
 public class Juego {
-    private List<Jugador> jugadores;
-    private int cantidadJugadores;
-    private List<Pregunta> preguntas;
     private int turno;
-    private int preguntaIndex;
-
-    public Juego(List<Jugador> jugadores, int cantidadJugadores, List<Pregunta> preguntas) {
-        this.jugadores = jugadores;
-        this.cantidadJugadores = cantidadJugadores;
-        this.preguntas = preguntas;
-    }
-
-    public void setCantidadJugadores(int cantidadJugadores) {
-        this.cantidadJugadores = cantidadJugadores;
-    }
+    private List<Jugador> listaDeJugadores;
+    private Jugador jugadorActual;
+    private List<Pregunta> listaDePreguntas;
+    private Pregunta preguntaActual;
     
-    public int cambioDeTurno(){
-        this.turno++;
-        this.preguntaIndex++;
-        if(turno % (cantidadJugadores-1)> 0){
+    
+    
+    public Juego (List<Jugador> listaDeJugadores){
+        this.turno = 0;
+        this.listaDeJugadores = listaDeJugadores;
+        this.subirNivelPreguntas(1);
+    }
+    public void CambiarTurno(){
+        int numeroJugadores = this.listaDeJugadores.size();
+        if(this.turno > (numeroJugadores-1))
             this.turno = 0;
-        }
-        return this.turno;
+        this.jugadorActual = this.listaDeJugadores.get(turno);
+        this.preguntaActual = this.listaDePreguntas.remove(0);
+        this.turno++;
     }
-    
-    public Jugador JugadorActual(){
-        Queue<Integer> cola=new LinkedList();
-        
-        return jugadores.get(turno);
+
+    public void subirNivelPreguntas(int nivel) {
+        PreguntaDAO preguntaDAO = new PreguntaDAOImp();
+        this.listaDePreguntas = preguntaDAO.seleccionarPreguntasPorNivel(nivel);
+        preguntaDAO.cerrarSession();
     }
-    public Pregunta preguntaActual(){
-        return preguntas.get(preguntaIndex++);
+
+    public int getTurno() {
+        return turno;
     }
-    
-    
-    
+
+    public void setTurno(int turno) {
+        this.turno = turno;
+    }
+
+    public List<Jugador> getListaDeJugadores() {
+        return listaDeJugadores;
+    }
+
+    public void setListaDeJugadores(List<Jugador> listaDeJugadores) {
+        this.listaDeJugadores = listaDeJugadores;
+    }
+
+    public Jugador getJugadorActual() {
+        return jugadorActual;
+    }
+
+    public void setJugadorActual(Jugador jugadorActual) {
+        this.jugadorActual = jugadorActual;
+    }
+
+    public List<Pregunta> getListaDePreguntas() {
+        return listaDePreguntas;
+    }
+
+    public void setListaDePreguntas(List<Pregunta> listaDePreguntas) {
+        this.listaDePreguntas = listaDePreguntas;
+    }
+
+    public Pregunta getPreguntaActual() {
+        return preguntaActual;
+    }
+
+    public void setPreguntaActual(Pregunta preguntaActual) {
+        this.preguntaActual = preguntaActual;
+    }
+
     
     
     
