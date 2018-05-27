@@ -9,6 +9,10 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet">
 <link href="CSS/palette.css" rel="stylesheet" type="text/css"/>
+<link href="CSS/sweetalert2.css" rel="stylesheet" type="text/css"/>
+<script src="JS/jquery-3.3.1.min.js" type="text/javascript"></script>
+<script src="JS/sweetalert2.all.min.js" type="text/javascript"></script>
+<script src="JS/Preguntas.js" type="text/javascript"></script>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -20,13 +24,13 @@
 
     <body id="fondo">
 
-        <audio preload="auto" controls autoplay loop>
+        <audio preload="auto" loop>
 
             <source src="Sonidos/juego-de-tronos-truth.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
         </audio>
 
-
+<!--juego.pre-->
        
             <div class="section"> </div>
             <div class="section"> </div>
@@ -35,7 +39,7 @@
                 <div class="col s12 m12">
 
                     <div class="font-effect-fire-animation">
-                        <h1 class="center-align">BIENVENIDO AL JUEGO DE LAS SECUENCIAS
+                        <h1 class="center-align">SECUENCIAS EN EL ESPACIO
                         </h1>
                     </div>
                 </div>

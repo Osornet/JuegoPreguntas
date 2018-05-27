@@ -29,13 +29,11 @@
           <p>I am a very simple card. I am good at containing small bits of information.</p>
           <br>
           <div class="row"> 
-              <div class="col m2 s2">
-                 
-                  
-                      
+              <div class="col m2 s2">                 
+                  <label>
                       <input name="group1" type="radio" checked />
                       <span></span>
-                  
+                  </label>
               </div>
               <div class="col m3 s3">
                   <img src="Imagenes/pregunta1/imagen transparente.png" alt=""/>

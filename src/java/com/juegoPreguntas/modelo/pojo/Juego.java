@@ -5,7 +5,9 @@
  */
 package com.juegoPreguntas.modelo.pojo;
 
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 /**
  *
@@ -38,6 +40,8 @@ public class Juego {
     }
     
     public Jugador JugadorActual(){
+        Queue<Integer> cola=new LinkedList();
+        
         return jugadores.get(turno);
     }
     public Pregunta preguntaActual(){
