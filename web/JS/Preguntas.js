@@ -56,7 +56,7 @@ function mostrarModal(cantidad) {
     //Y en el controlador capturarlos
     var jugadores = "";
     for (var i = 1; i <= cantidad; i++) {
-        jugadores += '<input id="swal-input' + i + '" class="swal2-input" placeholder="Nombre Jugador ' + i + '">';
+        jugadores += '<input id="swal-input' + i + '" class="swal2-input" placeholder="Nombre Jugador ' + i + ' name="jugadores">';
     }
     swal({
         title: 'Escribe el nombre de cada jugador',
@@ -66,22 +66,18 @@ function mostrarModal(cantidad) {
         html: jugadores,
         focusConfirm: false,
         preConfirm: () => {
-            //$.post('ActionServlet', {
-		//		nombre : nombreVar,
-		//		apellido: apellidoVar,
-		//		edad: edadVar
-		//	}, function(responseText) {
-		//		$('#tabla').html(responseText);
-		//	});
-            return [
-                document.getElementById('swal-input1').value,
-                document.getElementById('swal-input2').value
-            ];
+                    
+            var jugadores = document.getElementsByName('jugadores');
+            $.post('CargarJuego.pre', {
+			jugadores : jugadores
+			}, function(responseText) {
+            //		$('#tabla').html(responseText);
+			});
+            //return [
+            //   document.getElementById('swal-input1').value,
+            //  document.getElementById('swal-input2').value
+            //];
         }
-        
-    
-    //document.getElementById('swal-input1').value,
-    //document.getElementById('swal-input2').value
     });
 }
 
