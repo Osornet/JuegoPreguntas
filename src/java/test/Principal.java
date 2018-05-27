@@ -20,11 +20,12 @@ public class Principal {
 
 
     public static void main(String[] args) {
-       JugadorDAO jugadorDAO = new JugadorDAOImp();
-       Jugador jugador = jugadorDAO.obtenerPorClave(28);
-       jugador.setPuntaje(20);
-       jugadorDAO.Editar(jugador);
-       jugadorDAO.cerrarSession();
+       PreguntaDAO preguntaDAO = new PreguntaDAOImp();
+       
+       List<Pregunta> preguntas = preguntaDAO.seleccionarPreguntasPorNivel(1,1);
+       for(Pregunta pregunta:preguntas)
+            System.out.println(pregunta.getDescripcion());
+       preguntaDAO.cerrarSession();
     }
 
 

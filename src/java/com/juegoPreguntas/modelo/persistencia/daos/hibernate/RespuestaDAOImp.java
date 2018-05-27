@@ -130,7 +130,7 @@ public class RespuestaDAOImp implements RespuestaDAO{
         List<Respuesta> listaDeRespuestas = null;        
         try{
         this.abrirSession();
-        String consultaString = "from Respuesta respuesta where respuesta.pregunta_id:=id";
+        String consultaString = "from Respuesta respuesta where respuesta.pregunta_id=:id";
         Query consulta = this.session.createQuery(consultaString);
         consulta.setInteger("id", id);
         listaDeRespuestas = consulta.list();

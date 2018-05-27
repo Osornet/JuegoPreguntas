@@ -161,6 +161,39 @@ public class PreguntaDAOImp implements PreguntaDAO {
         return listaDePreguntas;
     }
 
+    @Override
+    public List<Pregunta> seleccionarPreguntasPorNivel(int nivel) {
+        List<Pregunta> listaDePreguntas = null;
+        String consultaString = "from Pregunta pre where nivel=:nivel order by rand()";
+        try{
+        this.abrirSession();
+        Query consulta = this.session.createQuery(consultaString);
+        consulta.setInteger("nivel", nivel);
+        listaDePreguntas =(List<Pregunta>)consulta.list();
+        }catch(HibernateException e){
+            System.out.println(e.getMessage());
+            this.cerrarSession();
+        }
+        return listaDePreguntas;
+    }
+
+    @Override
+    public List<Pregunta> seleccionarPreguntasPorNivel(int nivel, int numeroPreguntas) {
+         List<Pregunta> listaDePreguntas = null;
+        String consultaString = "from Pregunta pre where nivel=:nivel order by rand()";
+        try{
+        this.abrirSession();
+        Query consulta = this.session.createQuery(consultaString);
+        consulta.setInteger("nivel", nivel);
+        consulta.setMaxResults(numeroPreguntas);
+        listaDePreguntas =(List<Pregunta>)consulta.list();
+        }catch(HibernateException e){
+            System.out.println(e.getMessage());
+            this.cerrarSession();
+        }
+        return listaDePreguntas;
+    }
+
    
 
 }
