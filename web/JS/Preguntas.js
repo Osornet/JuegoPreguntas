@@ -55,30 +55,49 @@ function mostrarModal(cantidad) {
     //Despues por get o post enviar al controlador
     //Y en el controlador capturarlos
     var jugadores = "";
+    var val = true;
     for (var i = 1; i <= cantidad; i++) {
-        jugadores += '<input id="swal-input' + i + '" class="swal2-input" placeholder="Nombre Jugador ' + i + ' name="jugadores">';
+        jugadores += '<input id="swal-input' + i + '" class="swal2-input" placeholder="Nombre Jugador ' + i + '" name="jugadores" required>';
     }
     swal({
         title: 'Escribe el nombre de cada jugador',
         text: 'Nombre de los jugadores',
         type: 'info',
         confirmButtonText: 'Jugar',
+        //confirmButtonColor: 'green',
         html: jugadores,
         focusConfirm: false,
+        //showLoaderOnConfirm: true,
+
         preConfirm: () => {
-                    
+
             var jugadores = document.getElementsByName('jugadores');
-            $.post('CargarJuego.pre', {
-			jugadores : jugadores
-			}, function(responseText) {
-            //		$('#tabla').html(responseText);
-			});
-            //return [
-            //   document.getElementById('swal-input1').value,
-            //  document.getElementById('swal-input2').value
-            //];
+           // console.log(jugadores);
+           
+            for (i = 0; i<jugadores.length; i++) {
+                console.log(jugadores[i].value);
+                if (jugadores[i].value === "") {
+                    val = false;
+                }
+            }
+            if (val) {
+                $.post('CargarJuego.pre', {
+                    jugadores: jugadores
+                }, function (responseText) {
+                    //		$('#tabla').html(responseText);
+                });
+
+                //return [
+                //   document.getElementById('swal-input1').value,
+                //  document.getElementById('swal-input2').value
+                //];
+            }
+                
         }
+
     });
+    if(!val)
+        swal('Debes escribir todos los nombres :(')
 }
 
 
