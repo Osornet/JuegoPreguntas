@@ -5,7 +5,7 @@
  */
 package com.juegoPreguntas.controlador;
 
-import com.google.gson.Gson;
+//import com.google.gson.Gson;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -50,7 +50,7 @@ public class Jugadores extends HttpServlet {
         //BufferedReader reader = request.getReader();
         String nombres = request.getParameter("nombres");
         String[] datos = nombres.split(",");
-        Gson gson = new Gson();
+        //Gson gson = new Gson();
         System.out.println("hola"+nombres);
         //Object[] data = gson.fromJson(reader, Object[].class);
         for(String nombre: datos)

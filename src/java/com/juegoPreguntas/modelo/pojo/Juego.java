@@ -5,8 +5,6 @@
  */
 package com.juegoPreguntas.modelo.pojo;
 
-import com.juegoPreguntas.modelo.persistencia.daos.PreguntaDAO;
-import com.juegoPreguntas.modelo.persistencia.daos.hibernate.PreguntaDAOImp;
 import java.util.List;
 
 /**
@@ -17,8 +15,7 @@ public class Juego {
     private int turno;
     private List<Jugador> listaDeJugadores;
     private Jugador jugadorActual;
-    private List<Pregunta> listaDePreguntas;
-    private Pregunta preguntaActual;
+   
     
     
     
@@ -32,16 +29,11 @@ public class Juego {
         if(this.turno > (numeroJugadores-1))
             this.turno = 0;
         this.jugadorActual = this.listaDeJugadores.get(turno);
-        this.preguntaActual = this.listaDePreguntas.remove(0);
+        
         this.turno++;
     }
 
-    public void subirNivelPreguntas(int nivel) {
-        PreguntaDAO preguntaDAO = new PreguntaDAOImp();
-        this.listaDePreguntas = preguntaDAO.seleccionarPreguntasPorNivel(nivel);
-        preguntaDAO.cerrarSession();
-    }
-
+    
     public int getTurno() {
         return turno;
     }
@@ -66,23 +58,4 @@ public class Juego {
         this.jugadorActual = jugadorActual;
     }
 
-    public List<Pregunta> getListaDePreguntas() {
-        return listaDePreguntas;
-    }
-
-    public void setListaDePreguntas(List<Pregunta> listaDePreguntas) {
-        this.listaDePreguntas = listaDePreguntas;
-    }
-
-    public Pregunta getPreguntaActual() {
-        return preguntaActual;
-    }
-
-    public void setPreguntaActual(Pregunta preguntaActual) {
-        this.preguntaActual = preguntaActual;
-    }
-
-    
-    
-    
 }

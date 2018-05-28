@@ -18,34 +18,19 @@ import java.util.List;
 
 public class Jugador {
     
-    private int cod;
     private String nombre;
     private int posicion;
     private List<Pregunta> preguntas;
+    private Pregunta preguntaActual;
     //CONSTRUCTORES
 
     public Jugador() {
+        this.cargarPreguntas(1);
     }
 
-    public Jugador(int cod) {
-        this.cod = cod;
-    }
-
-    public Jugador(int cod, String nombre) {
-        this.cod = cod;
-        this.nombre = nombre;
-    }
-  
+     
     
     //GETTERS AND SETTERS
-
-    public int getCod() {
-        return cod;
-    }
-
-    public void setCod(int cod) {
-        this.cod = cod;
-    }
 
     public String getNombre() {
         return nombre;
@@ -71,41 +56,20 @@ public class Jugador {
         this.preguntas = preguntas;
     }
 
+    public Pregunta getPreguntaActual() {
+        return this.preguntas.remove(0);
+    }
+
+    public void setPreguntaActual(Pregunta preguntaActual) {
+        this.preguntaActual = preguntaActual;
+    }
+
    
-    //HASHCODE AND EQUALS
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 37 * hash + this.cod;
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Jugador other = (Jugador) obj;
-        if (this.cod != other.cod) {
-            return false;
-        }
-        return true;
-    }
-    
-    
+       
     public void cargarPreguntas(int nivel){
         PreguntaDAO preguntaDAO = new PreguntaDAOImp();
         this.preguntas = preguntaDAO.seleccionarPreguntasPorNivel(nivel, 15);
         preguntaDAO.cerrarSession();
     }
-    public Pregunta getPreguntaActual(){
-        
-    }
+   
 }
