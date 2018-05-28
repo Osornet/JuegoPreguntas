@@ -24,7 +24,9 @@ public class CargarJuegoAccion extends Accion {
         //Guardado de Jugadores
 
         String[] nombreJugadores = request.getParameterValues("jugadores");
-        
+        System.out.println("LLEGO");
+        for(String nombre: nombreJugadores)
+        System.out.println(nombre);
         List<Jugador> listaDeJugadores = new ArrayList<Jugador>();
         for (String nombre : nombreJugadores) {
             Jugador jugador = new Jugador();

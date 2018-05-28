@@ -31,20 +31,20 @@ $(document).ready(function () {
     //Muestro el modal para registrar los nombres de los jugadores
     $("#jugador1").click(function () {
         //mostrarModal(1);
-        mostrarCampos(1);
+        //mostrarCampos(1);
 
     });
 
     $("#jugador2").click(function () {
-        mostrarModal(2);
+        //mostrarModal(2);
     });
 
     $("#jugador3").click(function () {
-        mostrarModal(3);
+        //mostrarModal(3);
     });
 
     $("#jugador4").click(function () {
-        mostrarModal(4);
+        //mostrarModal(4);
     });
 
 
@@ -52,10 +52,7 @@ $(document).ready(function () {
 
 function mostrarCampos(jugador) {
     //location.href ="jugadores.jsp";
-    $("#nombres").append("<div class='input-field'>\n\
-                        <i class='material-icons prefix'>help</i>\n\
-                        <input type='text' id='jugador "+jugador+"' name = 'jugadores' placeholder='Jugador "+jugador+"'>\n\
-                        </div>");
+    $("#nombres").append("");
     
 }
 
