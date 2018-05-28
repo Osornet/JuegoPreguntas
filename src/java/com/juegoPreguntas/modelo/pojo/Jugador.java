@@ -22,13 +22,13 @@ public class Jugador {
     private int posicion;
     private List<Pregunta> preguntas;
     private Pregunta preguntaActual;
+    private int nivel;
     //CONSTRUCTORES
 
     public Jugador() {
-        this.cargarPreguntas(1);
+        this.setPosicion(1);
     }
-
-     
+    
     
     //GETTERS AND SETTERS
 
@@ -44,8 +44,33 @@ public class Jugador {
         return posicion;
     }
 
-    public void setPosicion(int posicion) {
+    public boolean setPosicion(int posicion) {
         this.posicion = posicion;
+        if((this.posicion >=1 || this.posicion >=15)&& this.nivel!=1){
+            this.setNivel(1);
+        }
+        if((this.posicion >=16 || this.posicion >=30)&& this.nivel!=2){
+            this.setNivel(2);
+        }
+        if((this.posicion >=31 || this.posicion >=45)&& this.nivel!=3){
+            this.setNivel(3);
+        }
+        if((this.posicion >=46 || this.posicion >=60)&& this.nivel!=4){
+            this.setNivel(4);
+        }
+        if(this.posicion == 60){
+            return true;
+        }    
+        return false;
+    }
+
+    public int getNivel() {
+        return nivel;
+    }
+
+    public void setNivel(int nivel) {
+        this.nivel = nivel;
+        this.cargarPreguntas(this.nivel);
     }
 
     public List<Pregunta> getPreguntas() {
@@ -57,18 +82,19 @@ public class Jugador {
     }
 
     public Pregunta getPreguntaActual() {
-        return this.preguntas.remove(0);
+        this.preguntaActual = this.preguntas.remove(0);
+        this.preguntas.add(this.preguntaActual);
+        return this.preguntaActual;
     }
 
     public void setPreguntaActual(Pregunta preguntaActual) {
         this.preguntaActual = preguntaActual;
     }
-
-   
+ 
        
     public void cargarPreguntas(int nivel){
         PreguntaDAO preguntaDAO = new PreguntaDAOImp();
-        this.preguntas = preguntaDAO.seleccionarPreguntasPorNivel(nivel, 15);
+        this.preguntas = preguntaDAO.seleccionarPreguntasPorNivel(nivel,15);
         preguntaDAO.cerrarSession();
     }
    
