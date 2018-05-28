@@ -30,7 +30,9 @@ $(document).ready(function () {
 
     //Muestro el modal para registrar los nombres de los jugadores
     $("#jugador1").click(function () {
-        mostrarModal(1);
+        //mostrarModal(1);
+        mostrarCampos(1);
+
     });
 
     $("#jugador2").click(function () {
@@ -48,6 +50,14 @@ $(document).ready(function () {
 
 });
 
+function mostrarCampos(jugador) {
+    //location.href ="jugadores.jsp";
+    $("#nombres").append("<div class='input-field'>\n\
+                        <i class='material-icons prefix'>help</i>\n\
+                        <input type='text' id='jugador "+jugador+"' name = 'jugadores' placeholder='Jugador "+jugador+"'>\n\
+                        </div>");
+    
+}
 
 function mostrarModal(cantidad) {
     //Debo mandar en una variable los nombres
@@ -71,33 +81,47 @@ function mostrarModal(cantidad) {
 
         preConfirm: () => {
 
-            var jugadores = document.getElementsByName('jugadores');
-           // console.log(jugadores);
-           
-            for (i = 0; i<jugadores.length; i++) {
-                console.log(jugadores[i].value);
-                if (jugadores[i].value === "") {
+            var inputs = document.getElementsByName('jugadores');
+            var nombres = [];
+            // console.log(jugadores);
+            var datos;
+            for (i = 0; i < inputs.length; i++) {
+                console.log(inputs[i].value);
+                if (i < inputs.length - 1)
+                    datos += inputs[i].value + ",";
+                else
+                    datos += inputs[i].value;
+                nombres.push(inputs[i].value);
+                if (inputs[i].value === "") {
                     val = false;
                 }
             }
+            console.log(nombres);
+            var json = JSON.stringify(nombres);
+            console.log(json);
             if (val) {
-                $.post('CargarJuego.pre', {
-                    jugadores: jugadores
-                }, function (responseText) {
-                    //		$('#tabla').html(responseText);
+                $.ajax({
+                    type: "POST",
+                    url: "Jugadores",
+                    //dataType : 'json',
+                    data: "nombres=" + datos,
+                    //data: {nombres : datos},
+                    //data: json,
+                    success: function (result) {
+                        alert("meeeeeeeeeeeeeeeeeeeeeeeeeeeec!");
+                    }
                 });
-
                 //return [
                 //   document.getElementById('swal-input1').value,
                 //  document.getElementById('swal-input2').value
                 //];
             }
-                
+
         }
 
     });
-    if(!val)
-        swal('Debes escribir todos los nombres :(')
+    if (!val)
+        swal('Debes escribir todos los nombres :(');
 }
 
 
