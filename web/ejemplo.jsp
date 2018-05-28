@@ -14,5 +14,15 @@
     <body>
         Jugador: <c:out value="${sessionScope.juego.jugadorActual.nombre}"/>
         
+        posicion: <c:out value="${sessionScope.juego.jugadorActual.posicion}"/>
+        
+        <form>
+            Pregunta: <c:out value="${sessionScope.juego.jugadorActual.preguntaActual}"/>
+            
+            <c:forEach var="pregunta" items="${sessionScope.juego.jugadorActual.preguntaActual.respuestas}">
+                <c:out value="${pregunta.descripcion}"/>
+            </c:forEach>
+        </form>
+        
     </body>
 </html>
