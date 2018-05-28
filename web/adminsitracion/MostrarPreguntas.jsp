@@ -33,9 +33,7 @@
         </thead>
         <tbody>
             <c:forEach var="pregunta" items="${sessionScope.listaDePreguntas}">
-                
-                    
-   
+                  
         
                     <tr>
           
