@@ -5,21 +5,23 @@
  */
 package com.juegoPreguntas.modelo.pojo;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import com.juegoPreguntas.modelo.persistencia.daos.PreguntaDAO;
+import com.juegoPreguntas.modelo.persistencia.daos.hibernate.PreguntaDAOImp;
+import java.util.List;
+
+
 
 /**
  *
  * @author osorn
  */
-@Entity
-@Table(name = "jugador")
+
 public class Jugador {
-    @Id
+    
     private int cod;
     private String nombre;
-    private int puntaje;
+    private int posicion;
+    private List<Pregunta> preguntas;
     //CONSTRUCTORES
 
     public Jugador() {
@@ -53,13 +55,23 @@ public class Jugador {
         this.nombre = nombre;
     }
 
-    public int getPuntaje() {
-        return puntaje;
+    public int getPosicion() {
+        return posicion;
     }
 
-    public void setPuntaje(int puntaje) {
-        this.puntaje = puntaje;
+    public void setPosicion(int posicion) {
+        this.posicion = posicion;
     }
+
+    public List<Pregunta> getPreguntas() {
+        return preguntas;
+    }
+
+    public void setPreguntas(List<Pregunta> preguntas) {
+        this.preguntas = preguntas;
+    }
+
+   
     //HASHCODE AND EQUALS
 
     @Override
@@ -87,4 +99,13 @@ public class Jugador {
         return true;
     }
     
+    
+    public void cargarPreguntas(int nivel){
+        PreguntaDAO preguntaDAO = new PreguntaDAOImp();
+        this.preguntas = preguntaDAO.seleccionarPreguntasPorNivel(nivel, 15);
+        preguntaDAO.cerrarSession();
+    }
+    public Pregunta getPreguntaActual(){
+        
+    }
 }

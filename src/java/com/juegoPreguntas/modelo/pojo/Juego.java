@@ -25,7 +25,7 @@ public class Juego {
     public Juego (List<Jugador> listaDeJugadores){
         this.turno = 0;
         this.listaDeJugadores = listaDeJugadores;
-        this.subirNivelPreguntas(1);
+        
     }
     public void CambiarTurno(){
         int numeroJugadores = this.listaDeJugadores.size();
