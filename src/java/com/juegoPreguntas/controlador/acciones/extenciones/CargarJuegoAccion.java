@@ -36,10 +36,10 @@ public class CargarJuegoAccion extends Accion {
         
         Juego juego = new Juego(listaDeJugadores);
         juego.CambiarTurno();
-        request.getSession().setAttribute("juego", "juego");
+        request.getSession().setAttribute("juego", juego);
 
         //preguntas nivel 1
-        return "juego.jsp";
+        return "ejemplo.jsp";
     }
 
 }
