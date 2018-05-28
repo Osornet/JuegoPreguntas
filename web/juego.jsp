@@ -7,6 +7,8 @@
 <link href="CSS/juego.css" rel="stylesheet" type="text/css"/>
 <link href="CSS/materialize/css/materialize.min.css" rel="stylesheet" type="text/css"/>
 <link href="CSS/palette.css" rel="stylesheet" type="text/css"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet">
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -90,11 +92,50 @@
         <span>
         <h2 class="white-text">Gabriela</h2>
         </span>
+            </div><br>
+            <button class="btn-large black-text yellow" id="dado"><i class="material-icons right" id="dado">sentiment_very_satisfied</i><strong>LANZAR DADO</strong></button> 
+            <br><br>
+            <div class="card-panel accent-color" style="border-radius: 15px">
+        <span>
+        <h2 class="white-text">#</h2>
+        </span>
       </div>
-            
         </div>
             <div class="col m4 s4">
                 <h2 class="white-text default-primary-color" style="border-radius: 15px">POSICIONES</h2>
+                
+                
+                <table class="striped centered" style="background-color: white">
+                <thead>
+                    <tr> 
+                
+                    <th>JUGADOR</th>                               
+                    <th>CASILLA</th>
+                    
+              
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+          
+              <td>Juan</td>
+              <td>10</td>
+              
+          </tr>
+          <tr>
+              <td>Gabriela</td>
+              <td>20</td>
+          </tr>
+          
+        </tbody>
+                </table><br><br>
+                <div class="row"> 
+              <div class="col m4 s4">
+                  <img src="Imagenes/tablero.png" alt=""/>
+              </div>
+              
+          </div>
+                
         </div>
         </div>
         

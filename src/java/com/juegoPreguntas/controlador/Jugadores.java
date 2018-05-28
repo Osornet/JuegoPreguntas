@@ -5,7 +5,8 @@
  */
 package com.juegoPreguntas.controlador;
 
-import com.juegoPreguntas.controlador.acciones.Accion;
+import com.google.gson.Gson;
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -16,10 +17,10 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author osorn
+ * @author JAVIER
  */
-@WebServlet(name = "controladorPreguntas", urlPatterns = {"*.pre"})
-public class controladorPreguntas extends HttpServlet {
+@WebServlet(name = "jugadores", urlPatterns = {"*.ju"})
+public class Jugadores extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,16 +33,33 @@ public class controladorPreguntas extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        String urlServlet = request.getServletPath();
-        Accion accion = Accion.getInstance(urlServlet);
-
-        if (accion != null) {
-            response.sendRedirect(accion.ejecutar(request, response));
-        } else {
-            response.sendError(404);
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet Jugadores</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet Jugadores at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
         }
-
+        System.out.println("LLEGO");
+        //BufferedReader reader = request.getReader();
+        String nombres = request.getParameter("nombres");
+        String[] datos = nombres.split(",");
+        Gson gson = new Gson();
+        System.out.println("hola"+nombres);
+        //Object[] data = gson.fromJson(reader, Object[].class);
+        for(String nombre: datos)
+        
+        System.out.println(nombre);
+        
+        //String[] nombreJugadores = request.getParameterValues("jugadores");
+        //for(String j : nombreJugadores)
+        //System.out.println(j);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

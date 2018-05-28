@@ -49,13 +49,13 @@
             <div class="section"> </div>
             <div class="row center-align">         
                 <div class="font-effect-fire-animation">>
-                    <button class="font-effect-fire-animation red btn-large black-text" id="jugador1"><i class="material-icons right" id="jugador1">sentiment_very_satisfied</i><strong>1 JUGADOR</strong></button>                
+                    <a class="font-effect-fire-animation red btn-large black-text" id="jugador1"><i class="material-icons right" id="jugador1">sentiment_very_satisfied</i><strong>1 JUGADOR</strong></a>                
                     >
-                    <button class="font-effect-fire-animation red btn-large black-text" id="jugador2"><i class="material-icons right" id="jugador2">sentiment_very_satisfied</i><strong>2 JUGADORES</strong></button> 
+                    <a class="font-effect-fire-animation red btn-large black-text" id="jugador2"><i class="material-icons right" id="jugador2">sentiment_very_satisfied</i><strong>2 JUGADORES</strong></a> 
                     >                
-                    <button class="font-effect-fire-animation red btn-large black-text" id="jugador3"><i class="material-icons right" id="jugador3">sentiment_very_satisfied</i><strong>3 JUGADORES</strong></button>          
+                    <a class="font-effect-fire-animation red btn-large black-text" id="jugador3"><i class="material-icons right" id="jugador3">sentiment_very_satisfied</i><strong>3 JUGADORES</strong></a>          
                     >
-                    <button class="font-effect-fire-animation red btn-large black-text" id="jugador4"><i class="material-icons right" id="jugador4">sentiment_very_satisfied</i><strong>4 JUGADORES</strong></button> 
+                    <a class="font-effect-fire-animation red btn-large black-text" id="jugador4"><i class="material-icons right" id="jugador4">sentiment_very_satisfied</i><strong>4 JUGADORES</strong></a> 
 
                 </div>
             </div>
