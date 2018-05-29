@@ -25,7 +25,7 @@ $(document).ready(function () {
       var numero = Math.round(Math.random() * (6 - 1) + 1);
       console.log(numero);
       $('#enviodado').val(numero);
-      $('#numero').replaceWith('<h2 id="numero">'+numero+"</h2>");
+      $('#numero').replaceWith('<h2 class="white-text" id="numero">'+numero+"</h2>");
     });
     
     $("#enviar").click(function(event){
@@ -34,6 +34,11 @@ $(document).ready(function () {
       $('#responder').submit();
       
     });
+    
+    if($('#res').val()!==''){
+        alert($('#res').val());
+    }
+    
     
     //Valido cual radiobutton esta seleccionado
     $("input[name=res]").click(function () {    
