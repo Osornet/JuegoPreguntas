@@ -22,9 +22,10 @@ $(document).ready(function () {
     });
     $("#dado").click(function(event){
       alert("Tirando dado");
-      
-      $('#dado').val(Math.random() * (max - min) + min);
-      
+      var numero = Math.round(Math.random() * (6 - 1) + 1);
+      console.log(numero);
+      $('#enviodado').val(numero);
+      $('#numero').replaceWith('<h2 id="numero">'+numero+"</h2>");
     });
     
     $("#enviar").click(function(event){

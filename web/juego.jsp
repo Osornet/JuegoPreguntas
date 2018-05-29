@@ -28,7 +28,8 @@
           <img src="Imagenes/pregunta1/pregunta.png" alt=""/>
           <span class="card-title black-text"></span>
         </div>
-        <form id="responder" action="juego.jsp" method="post">
+            <form action="Siguiente.pre" id="responder" method="POST">
+                <input id="enviodado" name="numeroDado" type="hidden"/>
         <div class="card-content" style="padding: 0px 24px 0px 24px;">
           <p>Completa la tabla.</p>
           <br>
@@ -36,19 +37,19 @@
               <div class="row center-align" style="margin-bottom: 0px;"> 
           <div class="col m4 s4">                 
                   <label>
-                      <input name="res" type="radio" checked />
+                      <input name="respuesta" type="radio" value="1" checked />
                       <span>A.</span>
                   </label>
               </div>
           <div class="col m4 s4">                 
                   <label>
-                      <input name="res" type="radio"/>
+                      <input name="respuesta" type="radio" value="2"/>
                       <span>B.</span>
                   </label>
               </div>
           <div class="col m4 s4">                 
                   <label>
-                      <input name="res" type="radio"/>
+                      <input name="respuesta" type="radio" value="3"/>
                       <span>C.</span>
                   </label>
               </div>
@@ -110,7 +111,7 @@
             <br><br>
             <div class="card-panel accent-color" style="border-radius: 15px">
         <span>
-        <h2 class="white-text">#</h2>
+            <h2 class="white-text" id="numero" value=""></h2>
         </span>
       </div>
         </div>
