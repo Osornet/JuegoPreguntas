@@ -20,6 +20,26 @@ $(document).ready(function () {
 
         i++;
     });
+    $("#dado").click(function(event){
+      alert("Tirando dado");
+      
+      $('#dado').val(Math.random() * (max - min) + min);
+      
+    });
+    
+    $("#enviar").click(function(event){
+      alert("Formulario enviado con jQuery");
+      console.log('HOLA');
+      $('#responder').submit();
+      
+    });
+    
+    //Valido cual radiobutton esta seleccionado
+    $("input[name=res]").click(function () {    
+        alert("La edad seleccionada es: " + $('input:radio[name=res]:checked').val());
+        alert("La edad seleccionada es: " + $(this).val());
+        $('#seleccionado').val($(this).val());
+    });
 
     //Cargo las preguntas por ajax
     $("#cargarpreguntas").click(function () {

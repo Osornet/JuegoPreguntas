@@ -16,7 +16,8 @@
         <title>JSP Page</title>
     </head>
     <body id="fondo">
-        
+        <div class="row"></div>
+        <div class="row"></div>
         <div class="row center-align">
             <div class="col S5 m5 offset-m3 offset-s3">
 
@@ -27,7 +28,7 @@
                             <span class="card-title black-text">Escribe el nombre del jugador</span>
                         </h4>                      
 
-                        <form action="CargarJuego.pre" method="post" style="margin: 0">
+                        <form id="formulario" action="CargarJuego.pre" method="post" style="margin: 0">
                                 <div class="input-field">
 
                                     <i class='material-icons prefix'>help</i>
@@ -39,7 +40,7 @@
                                     <input type='text' id='jugador2' name = 'jugadores' placeholder='Jugador 2' required>
                                 </div>
 
-                                <button class="btn waves-effect accent-color" type="submit" name="action">Guardar
+                            <button class="btn waves-effect accent-color" type="submit" id="" name="action">Guardar
                                     <i class="material-icons right">save</i>
                                 </button>
 

@@ -16,7 +16,8 @@
         <title>JSP Page</title>
     </head>
     <body id="fondo">
-        
+        <div class="row"></div>
+        <div class="row"></div>
         <div class="row center-align">
             <div class="col S5 m5 offset-m3 offset-s3">
 
