@@ -10,6 +10,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -30,8 +31,8 @@ public class Pregunta implements Serializable{
     private String descripcion;
     @Column(name="ruta_imagen")
     private String rutaImagen;
-    private String nivel;
-    @OneToMany(cascade = CascadeType.ALL)
+    private int nivel;
+    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     @JoinColumn(name = "id_pregunta")
     private List<Respuesta> respuestas;
        
@@ -53,18 +54,18 @@ public class Pregunta implements Serializable{
         this.rutaImagen = rutaImagen;
     }
 
-    public Pregunta(String descripcion, String rutaImagen, String nivel, List<Respuesta> respuestas) {
+    public Pregunta(String descripcion, String rutaImagen, int nivel, List<Respuesta> respuestas) {
         this.descripcion = descripcion;
         this.rutaImagen = rutaImagen;
         this.nivel = nivel;
         this.respuestas = respuestas;
     }
 
-    public String getNivel() {
+    public int getNivel() {
         return nivel;
     }
 
-    public void setNivel(String nivel) {
+    public void setNivel(int nivel) {
         this.nivel = nivel;
     }
    

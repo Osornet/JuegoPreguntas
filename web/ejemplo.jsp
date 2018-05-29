@@ -12,17 +12,21 @@
         <title>JSP Page</title>
     </head>
     <body>
+        
         Jugador: <c:out value="${sessionScope.juego.jugadorActual.nombre}"/>
-        
         posicion: <c:out value="${sessionScope.juego.jugadorActual.posicion}"/>
-        
-        <form>
-            Pregunta: <c:out value="${sessionScope.juego.jugadorActual.preguntaActual}"/>
+        <form action="Siguiente.pre">
+            Pregunta: <c:out value="${sessionScope.juego.jugadorActual.preguntaActual.descripcion}"/><br>
             
-            <c:forEach var="pregunta" items="${sessionScope.juego.jugadorActual.preguntaActual.respuestas}">
-                <c:out value="${pregunta.descripcion}"/>
+            <c:forEach var="respuesta" items="${sessionScope.juego.jugadorActual.preguntaActual.respuestas}">
+                <c:out value="${respuesta.descripcion}"/>
+                <input type="radio" name="idRespuesta" value="${respuesta.id}"/><br/>
             </c:forEach>
+            <input type="hidden" name="numeroDado" value="10"/>
+            <input type="submit" value="contestar"/>
         </form>
+      
+        <c:out value="${mensaje}"/>    
         
     </body>
 </html>

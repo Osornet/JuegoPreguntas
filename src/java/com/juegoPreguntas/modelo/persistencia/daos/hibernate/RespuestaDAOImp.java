@@ -37,8 +37,7 @@ public class RespuestaDAOImp implements RespuestaDAO{
     public void cerrarSession() {
         if (session != null) {
             session.close();
-            if(factoria != null)
-                factoria.close();
+            
         }
     }
     

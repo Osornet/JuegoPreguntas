@@ -85,6 +85,14 @@ public class Respuesta implements Serializable{
         this.pregunta = pregunta;
     }
 
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
     @Override
     public int hashCode() {
         int hash = 7;

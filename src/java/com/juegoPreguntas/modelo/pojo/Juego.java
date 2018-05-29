@@ -5,6 +5,7 @@
  */
 package com.juegoPreguntas.modelo.pojo;
 
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -43,7 +44,8 @@ public class Juego {
     }
 
     public List<Jugador> getListaDeJugadores() {
-        return listaDeJugadores;
+        Collections.sort(listaDeJugadores);
+        return this.listaDeJugadores;
     }
 
     public void setListaDeJugadores(List<Jugador> listaDeJugadores) {
