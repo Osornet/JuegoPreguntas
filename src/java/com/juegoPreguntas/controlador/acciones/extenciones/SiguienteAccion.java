@@ -6,10 +6,7 @@
 package com.juegoPreguntas.controlador.acciones.extenciones;
 
 import com.juegoPreguntas.controlador.acciones.Accion;
-import com.juegoPreguntas.modelo.persistencia.daos.RespuestaDAO;
-import com.juegoPreguntas.modelo.persistencia.daos.hibernate.RespuestaDAOImp;
 import com.juegoPreguntas.modelo.pojo.Juego;
-import com.juegoPreguntas.modelo.pojo.Respuesta;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -21,16 +18,13 @@ public class SiguienteAccion extends Accion{
 
     @Override
     public String ejecutar(HttpServletRequest request, HttpServletResponse response) {
-        int idRespuesta = Integer.parseInt(request.getParameter("idRespuesta"));
+        int respuesta = Integer.parseInt(request.getParameter("respuesta"));
         int numeroDado = Integer.parseInt(request.getParameter("numeroDado"));
-        Respuesta respuesta = null;
-        RespuestaDAO respuestaDao = new RespuestaDAOImp();
-        respuesta = respuestaDao.obtenerRespuesta(idRespuesta);
-        respuestaDao.cerrarSession();
+        
         
         Juego juego = (Juego)request.getSession().getAttribute("juego");
         String mensaje = "has fallado";
-        if(respuesta.getCorrecta()==1){
+        if(juego.getJugadorActual().getPreguntaActual().getRespuesta()==respuesta){
             if(juego.getJugadorActual().setPosicion(juego.getJugadorActual().getPosicion()+numeroDado)){
                 return "Victoria.jsp";
             }

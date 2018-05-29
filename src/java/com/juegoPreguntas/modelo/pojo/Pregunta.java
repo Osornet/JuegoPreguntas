@@ -32,9 +32,7 @@ public class Pregunta implements Serializable{
     @Column(name="ruta_imagen")
     private String rutaImagen;
     private int nivel;
-    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
-    @JoinColumn(name = "id_pregunta")
-    private List<Respuesta> respuestas;
+    private int respuesta;
        
     
     //CONSTRUCTORES
@@ -54,11 +52,11 @@ public class Pregunta implements Serializable{
         this.rutaImagen = rutaImagen;
     }
 
-    public Pregunta(String descripcion, String rutaImagen, int nivel, List<Respuesta> respuestas) {
+    public Pregunta(String descripcion, String rutaImagen, int nivel, int respuesta) {
         this.descripcion = descripcion;
         this.rutaImagen = rutaImagen;
         this.nivel = nivel;
-        this.respuestas = respuestas;
+        this.respuesta = respuesta;
     }
 
     public int getNivel() {
@@ -77,8 +75,8 @@ public class Pregunta implements Serializable{
         this.descripcion = descripcion;
     }
 
-    public void setRespuestas(List<Respuesta> respuestas) {
-        this.respuestas = respuestas;
+    public void setRespuesta(int respuesta) {
+        this.respuesta = respuesta;
     }
 
     public void setRutaImagen(String rutaImagen) {
@@ -95,8 +93,8 @@ public class Pregunta implements Serializable{
         return descripcion;
     }
 
-    public List<Respuesta> getRespuestas() {
-        return respuestas;
+    public int getRespuesta() {
+        return respuesta;
     }
 
     public String getRutaImagen() {
