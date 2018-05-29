@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet">
 <script src="JS/Preguntas.js" type="text/javascript"></script>
 <script src="JS/jquery-3.3.1.min.js" type="text/javascript"></script>
-
+<script src="JS/Jugadores.js" type="text/javascript"></script>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -28,9 +28,12 @@
                             <span class="card-title black-text">NOMBRE DE LOS JUGADORES</span>
                         </h4>
                         <form action="CargarJuego.pre" method="post">
-
+                            
+                            <span id="masJugadores">+ Jugadores</span>
+                            <span id="menosJugadores">- Jugadores</span>
                             <div id="nombres">
-                                                         
+                                <input type="text" name = "jugadores" placeholder="Jugador 1"/>
+                                
                             </div>
                             <button class="btn waves-effect accent-color" type="submit" name="action">Guardar
                                 <i class="material-icons right">save</i>

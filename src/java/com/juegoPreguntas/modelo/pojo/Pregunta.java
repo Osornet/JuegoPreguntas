@@ -10,6 +10,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -30,10 +31,8 @@ public class Pregunta implements Serializable{
     private String descripcion;
     @Column(name="ruta_imagen")
     private String rutaImagen;
-    private String nivel;
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_pregunta")
-    private List<Respuesta> respuestas;
+    private int nivel;
+    private int respuesta;
        
     
     //CONSTRUCTORES
@@ -53,18 +52,18 @@ public class Pregunta implements Serializable{
         this.rutaImagen = rutaImagen;
     }
 
-    public Pregunta(String descripcion, String rutaImagen, String nivel, List<Respuesta> respuestas) {
+    public Pregunta(String descripcion, String rutaImagen, int nivel, int respuesta) {
         this.descripcion = descripcion;
         this.rutaImagen = rutaImagen;
         this.nivel = nivel;
-        this.respuestas = respuestas;
+        this.respuesta = respuesta;
     }
 
-    public String getNivel() {
+    public int getNivel() {
         return nivel;
     }
 
-    public void setNivel(String nivel) {
+    public void setNivel(int nivel) {
         this.nivel = nivel;
     }
    
@@ -76,8 +75,8 @@ public class Pregunta implements Serializable{
         this.descripcion = descripcion;
     }
 
-    public void setRespuestas(List<Respuesta> respuestas) {
-        this.respuestas = respuestas;
+    public void setRespuesta(int respuesta) {
+        this.respuesta = respuesta;
     }
 
     public void setRutaImagen(String rutaImagen) {
@@ -94,8 +93,8 @@ public class Pregunta implements Serializable{
         return descripcion;
     }
 
-    public List<Respuesta> getRespuestas() {
-        return respuestas;
+    public int getRespuesta() {
+        return respuesta;
     }
 
     public String getRutaImagen() {

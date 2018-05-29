@@ -38,8 +38,7 @@ public class PreguntaDAOImp implements PreguntaDAO {
     public void cerrarSession() {
         if (session != null) {
             session.close();
-            if(factoria != null)
-                factoria.close();
+            
         }
     }
 
