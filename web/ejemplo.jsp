@@ -9,6 +9,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="JS/jquery-3.3.1.min.js" type="text/javascript"></script>
+        <script src="JS/ejemplo.js" type="text/javascript"></script>
         <title>JSP Page</title>
     </head>
     <body>
@@ -27,7 +29,7 @@
             <input type="submit" value="contestar"/>
         </form>
 
-        <c:out value="${mensaje}"/>    
+            <input type="hidden" id="res" value="${mensaje}"/>   
 
     </body>
 </html>
