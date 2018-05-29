@@ -39,7 +39,7 @@ public class CargarJuegoAccion extends Accion {
         request.getSession().setAttribute("juego", juego);
         request.getSession().setAttribute("mensaje", "");
         //preguntas nivel 1
-        return "ejemplo.jsp";
+        return "juego.jsp";
     }
 
 }

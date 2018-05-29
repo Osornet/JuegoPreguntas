@@ -12,7 +12,6 @@
 <link href="CSS/sweetalert2.css" rel="stylesheet" type="text/css"/>
 <script src="JS/jquery-3.3.1.min.js" type="text/javascript"></script>
 <script src="JS/sweetalert2.all.min.js" type="text/javascript"></script>
-<script src="JS/Preguntas.js" type="text/javascript"></script>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
