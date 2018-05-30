@@ -46,16 +46,16 @@ public class Jugador implements Comparable<Jugador>{
 
     public boolean setPosicion(int posicion) {
         this.posicion = posicion;
-        if((this.posicion >=1 || this.posicion <=15)&& this.nivel!=1){
+        if(this.posicion >=0 && this.posicion <=15 && this.nivel!=1){
             this.setNivel(1);
         }
-        if((this.posicion >=16 || this.posicion <=30)&& this.nivel!=2){
+        if(this.posicion >=16 && this.posicion <=30 && this.nivel!=2){
             this.setNivel(2);
         }
-        if((this.posicion >=31 || this.posicion <=45)&& this.nivel!=3){
+        if(this.posicion >=31 && this.posicion <=45 && this.nivel!=3){
             this.setNivel(3);
         }
-        if((this.posicion >=46 || this.posicion <=59)&& this.nivel!=4){
+        if(this.posicion >=46 && this.posicion <=59 && this.nivel!=4){
             this.setNivel(4);
         }
         if(this.posicion >= 60){
@@ -95,7 +95,7 @@ public class Jugador implements Comparable<Jugador>{
        
     public void cargarPreguntas(int nivel){
         PreguntaDAO preguntaDAO = new PreguntaDAOImp();
-        this.preguntas = preguntaDAO.seleccionarPreguntasPorNivel(nivel);
+        this.preguntas = preguntaDAO.seleccionarPreguntasPorNivel(nivel, 15);
         preguntaDAO.cerrarSession();
     }
 

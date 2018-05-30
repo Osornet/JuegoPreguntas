@@ -10,7 +10,9 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet">
 <script src="JS/jquery-3.3.1.min.js" type="text/javascript"></script>
+<script src="JS/sweetalert2.all.min.js" type="text/javascript"></script>
 <script src="JS/Preguntas.js" type="text/javascript"></script>
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -26,7 +28,7 @@
                 <h2 class="white-text default-primary-color" style="border-radius: 15px">PREGUNTAS</h2>
                 <div class="card">
                     <div class="card-image">
-                        <img src="${sessionScope.juego.jugadorActual.preguntaActual.rutaImagen}" alt=""/>
+                        <img src="<c:out value="${sessionScope.juego.jugadorActual.preguntaActual.rutaImagen}"/>" alt=""/>
                         <span class="card-title black-text"></span>
                     </div>
                     <form action="Siguiente.pre" id="responder" method="POST">
@@ -96,7 +98,7 @@
                             -->
                         </div><br>
                         <div class="card-action" style="background-color: #FF4081">
-                            <button id="enviar" class="btn-large waves-effect accent-color"><h5><strong>RESPONDER</strong></h5></button>
+                            <button id="enviar" class="btn-large waves-effect accent-color" disabled><h5><strong>RESPONDER</strong></h5></button>
                         </div>
                     </form>
                             <input id="res" name="res" type="hidden" value="${sessionScope.mensaje}"/>
@@ -105,14 +107,16 @@
             </div>
             <div class="col m3 s3">
                 <h2 class="white-text default-primary-color" style="border-radius: 15px">TURNO</h2>
-                <br><br><div class="card-panel accent-color" style="border-radius: 15px">
+                <div class="card-panel accent-color" style="border-radius: 15px">
                     <span>
                         <h2 class="white-text"><c:out value="${sessionScope.juego.jugadorActual.nombre}"/></h2>
                     </span>
                 </div><br>
-                <button class="btn-large black-text yellow" id="dado"><i class="material-icons right" id="dado">sentiment_very_satisfied</i><strong>LANZAR DADO</strong></button> 
+               <!-- <button class="btn-large black-text yellow" id="dado"><i class="material-icons right" id="dado">sentiment_very_satisfied</i><strong>LANZAR DADO</strong></button> -->
+               <button class="btn-large waves-effect yellow black-text" id="dado"><h5><strong>LANZAR DADO</strong></h5></button>
                 <br><br>
-                <div class="card-panel accent-color" style="border-radius: 15px">
+                <div class="" style="border-radius: 15px">
+                    <img src="" id="imagendado" alt=""/>
                     <span>
                         <h2 class="white-text" id="numero" value=""></h2>
                     </span>

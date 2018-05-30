@@ -1,4 +1,6 @@
 
+
+
 $(document).ready(function () {
 
     var i = 1;
@@ -20,29 +22,101 @@ $(document).ready(function () {
 
         i++;
     });
-    $("#dado").click(function(event){
+    $("#dado").click(function (event) {
         
-      alert("Tirando dado");
-      var numero = Math.round(Math.random() * (6 - 1) + 1);
-      console.log(numero);
-      $('#enviodado').val(numero);
-      $('#numero').replaceWith('<h2 class="white-text" id="numero">'+numero+"</h2>");
+        $("#enviar").removeAttr("disabled");
+//var img = $('<img>');
+//img.attr('src', imageURL);
+//img.appendTo('#randomDiv');function mostrarimagen(){
+
+//var imagen = "  "
+
+
+
+//document.write('<img id="myPhoto" width="50" height="50">');
+
+//document.getElementById("myPhoto").src=imagen;
+
+
+        swal({
+            title: 'Lanzando Dado...!',
+            text: '',
+            timer: 1000,
+            onOpen: () => {
+                swal.showLoading();
+            }
+        }).then((result) => {
+            if (
+                    // Read more about handling dismissals
+                    result.dismiss === swal.DismissReason.timer
+                    ) {
+                console.log('I was closed by the timer');
+            }
+            var numero = Math.round(Math.random() * (6 - 1) + 1);
+            var dado = '';
+
+            if (numero === 1)
+                dado = 'Imagenes/dice1.png';
+            else if (numero === 2)
+                dado = 'Imagenes/dice2.png';
+            else if (numero === 3)
+                dado = 'Imagenes/dice3.png';
+            else if (numero === 4)
+                dado = 'Imagenes/dice4.png';
+            else if (numero === 5)
+                dado = 'Imagenes/dice5.png';
+            else
+                dado = 'Imagenes/dice6.png';
+
+            swal({
+                imageUrl: dado
+            });
+            $('#enviodado').val(numero);
+            //$('#numero').replaceWith('<h2 class="white-text" id="numero">' + numero + "</h2>");
+            //$('#imagendado').replaceWith('<img id="imagendado"> src="' + dado + '"</h2>');
+            document.getElementById('imagendado').src = dado;
+        });
+
     });
-    
-    $("#enviar").click(function(event){
-      alert("Formulario enviado con jQuery");
-      console.log('HOLA');
-      $('#responder').submit();
-      
+
+    $("#enviar").click(function (event) {
+        if ($('#res').val() !== '') {
+            $('#responder').submit();
+        }
+        else{
+            swal({
+                type: 'warning',
+                title: '! Debes lanzar el dado ¡ :)',
+                text: '',
+                confirmButtonColor: 'red',
+            })
+        }                
     });
-    
-    if($('#res').val()!==''){
-        alert($('#res').val());
+
+    if ($('#res').val() !== '') {
+        if ($('#res').val() === 'correcta') {
+            swal({
+                type: 'success',
+                title: '! Respuesta Correcta ¡ :)',
+                text: '',
+                confirmButtonColor: 'green',
+                //confirmButtonText: 'yupi!',
+            })
+        } else {
+            swal({
+                type: 'error',
+                title: 'Oops...Respuesta Incorrecta :(',
+                text: '',
+                confirmButtonColor: 'red',
+                //confirmButtonText: 'nooo',
+            })
+        }
+        //alert($('#res').val());
     }
-    
-    
+
+
     //Valido cual radiobutton esta seleccionado
-    $("input[name=res]").click(function () {    
+    $("input[name=res]").click(function () {
         alert("La edad seleccionada es: " + $('input:radio[name=res]:checked').val());
         alert("La edad seleccionada es: " + $(this).val());
         $('#seleccionado').val($(this).val());
@@ -80,7 +154,7 @@ $(document).ready(function () {
 function mostrarCampos(jugador) {
     //location.href ="jugadores.jsp";
     $("#nombres").append("");
-    
+
 }
 
 function mostrarModal(cantidad) {

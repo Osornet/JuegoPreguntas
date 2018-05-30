@@ -23,12 +23,12 @@ public class SiguienteAccion extends Accion{
         
         
         Juego juego = (Juego)request.getSession().getAttribute("juego");
-        String mensaje = "has fallado";
+        String mensaje = "incorrecta";
         if(juego.getJugadorActual().getPreguntaActual().getRespuesta()==respuesta){
             if(juego.getJugadorActual().setPosicion(juego.getJugadorActual().getPosicion()+numeroDado)){
                 return "Victoria.jsp";
             }
-           mensaje = "Has contestado Bien";
+           mensaje = "correcta";
         }
          request.getSession().setAttribute("mensaje", mensaje);
         juego.CambiarTurno();
