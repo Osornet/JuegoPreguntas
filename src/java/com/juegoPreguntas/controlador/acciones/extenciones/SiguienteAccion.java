@@ -23,6 +23,7 @@ public class SiguienteAccion extends Accion{
         
         
         Juego juego = (Juego)request.getSession().getAttribute("juego");
+        int nivelAnterior = juego.getJugadorActual().getNivel();
         String mensaje = "incorrecta";
         if(juego.getJugadorActual().getPreguntaActual().getRespuesta()==respuesta){
             if(juego.getJugadorActual().setPosicion(juego.getJugadorActual().getPosicion()+numeroDado)){
@@ -31,6 +32,11 @@ public class SiguienteAccion extends Accion{
            mensaje = "correcta";
         }
          request.getSession().setAttribute("mensaje", mensaje);
+         String cambioNivel = null;
+         if(nivelAnterior!=juego.getJugadorActual().getNivel())
+             cambioNivel = "has alcanzado el nivel "+juego.getJugadorActual().getNivel();
+         request.setAttribute("cambioNivel", cambioNivel);
+         
         juego.CambiarTurno();
         
              
