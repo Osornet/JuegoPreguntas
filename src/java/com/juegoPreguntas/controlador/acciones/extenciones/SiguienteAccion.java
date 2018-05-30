@@ -32,7 +32,7 @@ public class SiguienteAccion extends Accion{
            mensaje = "correcta";
         }
          request.getSession().setAttribute("mensaje", mensaje);
-         String cambioNivel = null;
+         String cambioNivel = "";
          if(nivelAnterior!=juego.getJugadorActual().getNivel())
              cambioNivel = "has alcanzado el nivel "+juego.getJugadorActual().getNivel();
          request.setAttribute("cambioNivel", cambioNivel);
