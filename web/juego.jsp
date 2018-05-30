@@ -26,7 +26,7 @@
                 <h2 class="white-text default-primary-color" style="border-radius: 15px">PREGUNTAS</h2>
                 <div class="card">
                     <div class="card-image">
-                        <img src="<c:url value="${sessionScope.juego.jugadorActual.preguntaActual.rutaImagen}"/>" alt=""/>
+                        <img src="${sessionScope.juego.jugadorActual.preguntaActual.rutaImagen}" alt=""/>
                         <span class="card-title black-text"></span>
                     </div>
                     <form action="Siguiente.pre" id="responder" method="POST">
@@ -66,7 +66,7 @@
                                     </label>
                                 </div>
                                 <div class="col m3 s3">
-                                    <img src="Imagenes/pregunta1/imagen transparente.png" alt=""/>
+                                    <img src="Imagenes/preguntas/imagen transparente.png" alt=""/>
                                 </div>
                             </div>
                             <div class="row" style="margin-bottom: 0px;"> 

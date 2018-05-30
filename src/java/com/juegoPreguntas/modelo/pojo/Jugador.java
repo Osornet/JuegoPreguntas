@@ -95,7 +95,7 @@ public class Jugador implements Comparable<Jugador>{
        
     public void cargarPreguntas(int nivel){
         PreguntaDAO preguntaDAO = new PreguntaDAOImp();
-        this.preguntas = preguntaDAO.seleccionarPreguntasPorNivel(nivel,15);
+        this.preguntas = preguntaDAO.seleccionarPreguntasPorNivel(nivel);
         preguntaDAO.cerrarSession();
     }
 

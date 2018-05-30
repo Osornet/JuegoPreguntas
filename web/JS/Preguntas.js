@@ -21,6 +21,7 @@ $(document).ready(function () {
         i++;
     });
     $("#dado").click(function(event){
+        
       alert("Tirando dado");
       var numero = Math.round(Math.random() * (6 - 1) + 1);
       console.log(numero);

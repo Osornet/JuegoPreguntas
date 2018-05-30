@@ -37,7 +37,7 @@ public class SiguienteAccion extends Accion{
            
         
         
-        return "ejemplo.jsp";        
+        return "juego.jsp";        
     }
     
 }
