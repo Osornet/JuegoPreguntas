@@ -1,5 +1,5 @@
 $(document).ready(function () {
-
+    //Muestro la tabla a medida que avanzan las casillas
     if($("#res").val()!==""){
         alert($("#res").val());
     }

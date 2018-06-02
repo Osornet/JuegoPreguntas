@@ -18,3 +18,24 @@ body{
     background-attachment: fixed;
 }
 
+#tablero {
+    width: 100%;
+    background-color: #ff0;
+    border: 2px solid yellow;
+    
+}
+.celdastablero{
+    border: 2px solid green;
+    height: 50px;
+    width: 50px;
+}
+/*td, th{
+    border: 2px solid green;
+    height: 150px;
+    width: 150px;
+}
+
+/* border=1 cellspacing=0 cellpadding=2 bordercolor="black" */
+
+
+

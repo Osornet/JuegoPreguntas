@@ -37,8 +37,12 @@ public class CargarJuegoAccion extends Accion {
         Juego juego = new Juego(listaDeJugadores);
         juego.CambiarTurno();
         request.getSession().setAttribute("juego", juego);
+        request.getSession().setAttribute("preguntaActual", juego.getJugadorActual().getPreguntaActual());
         request.getSession().setAttribute("mensaje", "");
-        //preguntas nivel 1
+        System.out.println("El mensaje de respuesta es: "+request.getSession().getAttribute("mensaje"));
+        
+        //request.setAttribute("cambioNivel", "no");
+        
         return "juego.jsp";
     }
 

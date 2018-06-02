@@ -1,10 +1,17 @@
 
 
 
-$(document).ready(function () {
+$(document).ready(function () {   
 
+    //Muestro los nombres en el tablero a medida que avanzan las casillas
+    var tope = $("#tope").val();
+    for(var i = 0; i<tope; i++){
+        var nombre = $("#nombre"+i).val();
+        var posicion = $("#posicion"+i).val();
+        $('#p'+posicion+'').append(nombre+"<br/>");
+    }
+    
     var i = 1;
-
     $("#añadir").click(function () {
 
         $("#opciones").append(" <div class='row'> <div class='input-field col s9 m9'>\n\
@@ -23,7 +30,7 @@ $(document).ready(function () {
         i++;
     });
     $("#dado").click(function (event) {
-        
+
         $("#enviar").removeAttr("disabled");
 //var img = $('<img>');
 //img.attr('src', imageURL);
@@ -80,40 +87,50 @@ $(document).ready(function () {
     });
 
     $("#enviar").click(function (event) {
-        if ($('#res').val() !== '') {
+        //if ($('#res').val() !== '') {
             $('#responder').submit();
-        }
-        else{
-            swal({
-                type: 'warning',
-                title: '! Debes lanzar el dado ¡ :)',
-                text: '',
-                confirmButtonColor: 'red',
-            })
-        }                
+        //} 
+        //else {
+        //    swal({
+        //        type: 'warning',
+        //        title: '! Debes lanzar el dado ¡ :)',
+        //        text: '',
+        //        confirmButtonColor: 'red',
+        //    })
+        //}
     });
-
+    //Muestra alert si subio de nivel
+    if ($('#nivel').val() !== "") {
+        
+        swal({
+                type: 'success',
+                title: $('#nivel').val(),
+                text: '<h4></h1>Felicitaciones :)</h4>',
+                confirmButtonColor: 'green'
+                //confirmButtonText: 'yupi!',
+            });        
+    }
+    console.log('Respuesta de la pregunta: '+$('#res').val());
+    //Muestra alert si respondio correcta o incorrectamente
     if ($('#res').val() !== '') {
         if ($('#res').val() === 'correcta') {
             swal({
                 type: 'success',
                 title: '! Respuesta Correcta ¡ :)',
                 text: '',
-                confirmButtonColor: 'green',
+                confirmButtonColor: 'green'
                 //confirmButtonText: 'yupi!',
-            })
-        } else {
+            });
+        } else if($('#res').val() === 'incorrecta'){
             swal({
                 type: 'error',
                 title: 'Oops...Respuesta Incorrecta :(',
                 text: '',
                 confirmButtonColor: 'red',
                 //confirmButtonText: 'nooo',
-            })
+            });
         }
-        //alert($('#res').val());
     }
-
 
     //Valido cual radiobutton esta seleccionado
     $("input[name=res]").click(function () {

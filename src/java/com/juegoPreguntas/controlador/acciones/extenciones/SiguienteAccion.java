@@ -7,6 +7,7 @@ package com.juegoPreguntas.controlador.acciones.extenciones;
 
 import com.juegoPreguntas.controlador.acciones.Accion;
 import com.juegoPreguntas.modelo.pojo.Juego;
+import com.juegoPreguntas.modelo.pojo.Pregunta;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -14,36 +15,38 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author osorn
  */
-public class SiguienteAccion extends Accion{
+public class SiguienteAccion extends Accion {
 
     @Override
     public String ejecutar(HttpServletRequest request, HttpServletResponse response) {
         int respuesta = Integer.parseInt(request.getParameter("respuesta"));
         int numeroDado = Integer.parseInt(request.getParameter("numeroDado"));
-        
-        
-        Juego juego = (Juego)request.getSession().getAttribute("juego");
+
+        Juego juego = (Juego) request.getSession().getAttribute("juego");
         int nivelAnterior = juego.getJugadorActual().getNivel();
         String mensaje = "incorrecta";
-        if(juego.getJugadorActual().getPreguntaActual().getRespuesta()==respuesta){
-            if(juego.getJugadorActual().setPosicion(juego.getJugadorActual().getPosicion()+numeroDado)){
-                return "Victoria.jsp";
+        
+        Pregunta preguntaActual = (Pregunta)request.getSession().getAttribute("preguntaActual");
+        if (preguntaActual.getRespuesta() == respuesta) {
+            
+            if (juego.getJugadorActual().setPosicion(juego.getJugadorActual().getPosicion() + numeroDado)) {
+                return "victoria.jsp";
             }
-           mensaje = "correcta";
+            mensaje = "correcta";
         }
-         request.getSession().setAttribute("mensaje", mensaje);
-         String cambioNivel = "";
-         if(nivelAnterior!=juego.getJugadorActual().getNivel())
-             cambioNivel = "has alcanzado el nivel "+juego.getJugadorActual().getNivel();
-         request.setAttribute("cambioNivel", cambioNivel);
-         
+        
+        request.getSession().setAttribute("mensaje", mensaje);       
+        
+        System.out.println("El mensaje de respuesta es: "+request.getSession().getAttribute("mensaje"));
         juego.CambiarTurno();
+        String cambioNivel = null;
+        if (nivelAnterior != juego.getJugadorActual().getNivel()) 
+            cambioNivel = "!! "+juego.getJugadorActual().getNombre()+"\nHas alcanzado el nivel " + juego.getJugadorActual().getNivel()+" ¡¡";
+        request.setAttribute("cambioNivel", cambioNivel);
+        request.getSession().setAttribute("preguntaActual", juego.getJugadorActual().getPreguntaActual());
         
-             
-           
         
-        
-        return "juego.jsp";        
+        return "juego.jsp";
     }
-    
+
 }
