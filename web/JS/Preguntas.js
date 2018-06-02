@@ -6,9 +6,15 @@ $(document).ready(function () {
     //Muestro los nombres en el tablero a medida que avanzan las casillas
     var tope = $("#tope").val();
     for(var i = 0; i<tope; i++){
+        if(i<=9){
+            
+        }else if(i>=10 && i<=60){
+            
+        }
         var nombre = $("#nombre"+i).val();
         var posicion = $("#posicion"+i).val();
         $('#p'+posicion+'').append(nombre+"<br/>");
+        
     }
     
     var i = 1;

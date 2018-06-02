@@ -19,15 +19,33 @@ body{
 }
 
 #tablero {
-    width: 100%;
-    background-color: #ff0;
-    border: 2px solid yellow;
+    background-color: #ffeb3b;
+    border: 5px solid #673AB7;
+    border-collapse: separate;
+    width: 400px;  
     
 }
 .celdastablero{
-    border: 2px solid green;
-    height: 50px;
-    width: 50px;
+    border: 1px solid #673AB7;
+    /*height: 40px;*/
+    text-align: center;
+    border-radius: 5px;
+    padding: 10px 10px;
+    background: white;
+}
+
+.nivel1{
+    background-color: #FC8F03;
+}
+
+.nivel2{
+    background-color: #FCE503;
+}
+.nivel3{
+    background-color: #C3FC03;
+}
+.nivel4{
+    background-color: #02F73D;
 }
 /*td, th{
     border: 2px solid green;
