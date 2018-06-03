@@ -31,23 +31,25 @@
                         <form action="CargarJuego.pre" method="post" style="margin: 0">
                                 <div class="input-field">
 
-                                    <i class='material-icons prefix'>help</i>
-                                    <input type='text' id='jugador1' name = 'jugadores' placeholder='Jugador 1' required>
+                                    <i class='material-icons prefix'>accessibility</i>
+                                    <input type='text' id='jugador1' name = 'jugadores' placeholder='Jugador 1' maxlength="20" required>
                                 </div>
                                 <div class="input-field">
 
-                                    <i class='material-icons prefix'>help</i>
-                                    <input type='text' id='jugador2' name = 'jugadores' placeholder='Jugador 2' required>
+                                    <i class='material-icons prefix'>accessibility</i>
+                                    <input type='text' id='jugador2' name = 'jugadores' placeholder='Jugador 2' maxlength="20" required>
                                 </div>
                             <div class="input-field">
 
-                                    <i class='material-icons prefix'>help</i>
-                                    <input type='text' id='jugador3' name = 'jugadores' placeholder='Jugador 3' required>
-                                </div>
-
-                                <button class="btn waves-effect accent-color" type="submit" name="action">Guardar
+                                    <i class='material-icons prefix'>accessibility</i>
+                                    <input type='text' id='jugador3' name = 'jugadores' placeholder='Jugador 3' maxlength="20" required>
+                            </div>
+                            
+                            <a class="btn waves-effect red" href="index.jsp" style="color: white">Atrás<i class="material-icons right">arrow_back</i></a>     
+                            
+                            <button class="btn waves-effect accent-color" type="submit" name="action">Guardar
                                     <i class="material-icons right">save</i>
-                                </button>
+                            </button>
 
                             </form>
                         

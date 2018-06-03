@@ -49,13 +49,13 @@ public class Jugador implements Comparable<Jugador>{
         if(this.posicion >=0 && this.posicion <=15 && this.nivel!=1){
             this.setNivel(1);
         }
-        if(this.posicion >=16 && this.posicion <=30 && this.nivel!=2){
+        else if(this.posicion >=16 && this.posicion <=30 && this.nivel!=2){
             this.setNivel(2);
         }
-        if(this.posicion >=31 && this.posicion <=45 && this.nivel!=3){
+        else if(this.posicion >=31 && this.posicion <=45 && this.nivel!=3){
             this.setNivel(3);
         }
-        if(this.posicion >=46 && this.posicion <=59 && this.nivel!=4){
+        else if(this.posicion >=46 && this.posicion <=59 && this.nivel!=4){
             this.setNivel(4);
         }
         if(this.posicion >= 60){

@@ -5,7 +5,6 @@
  */
 package com.juegoPreguntas.modelo.persistencia.daos;
 
-import com.juegoPreguntas.modelo.persistencia.daos.hibernate.HibernateHelper;
 import com.juegoPreguntas.modelo.pojo.Pregunta;
 import java.util.List;
 
