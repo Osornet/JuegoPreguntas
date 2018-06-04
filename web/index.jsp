@@ -23,7 +23,7 @@
 
     <body id="fondo">
 
-        <audio preload="auto" loop>
+        <audio preload="auto" autoplay loop>
 
             <source src="Sonidos/juego-de-tronos-truth.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
@@ -46,6 +46,9 @@
 
             <div class="section"> </div>
             <div class="section"> </div>
+            <br>
+            <br><br>
+            
             <div class="row center-align">         
                 <div class="font-effect-fire-animation">>
                     <a href="jugador1.jsp" class="font-effect-fire-animation red btn-large black-text" id="jugador1"><i class="material-icons right" id="jugador1">sentiment_very_satisfied</i><strong>1 JUGADOR</strong></a>                

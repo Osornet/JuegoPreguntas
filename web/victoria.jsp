@@ -6,6 +6,11 @@
 <link href="CSS/materialize/css/materialize.min.css" rel="stylesheet" type="text/css"/>
 <link href="CSS/palette.css" rel="stylesheet" type="text/css"/>
 <link href="CSS/victoria.css" rel="stylesheet" type="text/css"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rancho&effect=fire-animation"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rancho&effect=shadow-multiple"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rancho&effect=distressed"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
@@ -16,38 +21,45 @@
     </head>
     <body id="victoria">
         <br>  
-    <div class="row center-align">
-    <div class="col s12 m12">
-      
-        <div style="border-radius: 15px">
-          <img src="Imagenes/podio3.jpg">
-          
-        </div>
-          <div class="">
-            <h2>!!! FELICITACIONES JAVIER HAS GANADO ¡¡¡</h2>
-            <h3><c:out value="${sessionScope.juego.jugadorActual.nombre}"/></h3>
-        </div>
-      
-    </div>
-  </div>
-        
-                
-        <div class="row">
-                    
-        </div>
-        
-        Tabla de Posiciones
-        <table>
-            <tr>
-                <th>Nombre Jugador</th><th>Posicion final</th>
-            </tr>
-            <!--Mostrar podio de todos los jugadores resaltar el ganador-->
-            <c:forEach var ="jugador" items = "${sessionScope.juego.listaDeJugadores}">
-                <tr>
-                    <td><c:out value="${jugador.nombre}"/></td><td>${jugador.posicion}</td>
-                </tr>
-            </c:forEach>
+        <div class="row center-align">
+            <div class="col s12 m12">
 
-        </table>
+                <div>
+                    <img src="Imagenes/podio1.jpg" style="border-radius: 20px; height: 250px; width: 500px">
+
+                </div>
+                <div class="font-effect-fire-animation">
+                    <h2 style="font-family: Rancho">!!! FELICITACIONES <c:out value="${sessionScope.juego.jugadorActual.nombre}"/> HAS GANADO ¡¡¡</h2>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row center-align">
+            <div class="col s3 m3 offset-s4 offset-m4">
+                <h2 class="font-effect-shadow-multiple" style="font-family: Rancho">Tabla de Posiciones</h2>
+                <table class="striped highlight centered" style="background-color: white">
+                    
+                    <tbody>
+                        <!--Mostrar podio de todos los jugadores resaltar el ganador-->
+                        <c:set var="i" value="${1}"/>
+                        <c:forEach var ="jugador" items = "${sessionScope.juego.listaDeJugadores}">
+                            <tr>
+                                <td class="font-effect-fire-animation"><h6 style="color: red"><strong><c:out value="${i}"/>° lugar</strong></h6></td><td class="font-effect-fire-animation"><h6><strong style="color: black"><c:out value="${jugador.nombre}"/></strong></h6></td>
+                            </tr>
+                            <c:set var="i" value="${i+1}"/>
+                        </c:forEach>
+
+                        <tr>
+                            <td class="font-effect-fire-animation"><h6 style="color: red"><strong>1° lugar</strong></h6></td><td class="font-effect-fire-animation"><h6><strong style="color: black">Javier</strong></h6></td>
+                        </tr>
+                       
+                    </tbody>
+                </table>
+            </div>
+                        <a class="btn-large dark-primary-color" href="index.jsp" style="color: white"><strong>Nuevo Juego</strong><i class="material-icons right">gamepad</i></a> 
+        </div>
+
+
     </body>
 </html>
