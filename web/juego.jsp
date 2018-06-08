@@ -42,7 +42,7 @@
                         <input id="enviodado" name="numeroDado" type="hidden"/>
 
                         <div class="card-content" style="padding: 0px 24px 0px 24px;">
-                            <h4><c:out value="${sessionScope.juego.jugadorActual.preguntaActual.descripcion}"/></h4>
+                            <h5><c:out value="${sessionScope.juego.jugadorActual.preguntaActual.descripcion}"/></h5>
                             <br>
 
                             <div class="row center-align" style="margin-bottom: 0px;"> 

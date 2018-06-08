@@ -52,12 +52,7 @@
                                 <td class="font-effect-fire-animation"><h6 style="color: red"><strong><c:out value="${i}"/>° lugar</strong></h6></td><td class="font-effect-fire-animation"><h6><strong style="color: black"><c:out value="${jugador.nombre}"/></strong></h6></td>
                             </tr>
                             <c:set var="i" value="${i+1}"/>
-                        </c:forEach>
-
-                        <tr>
-                            <td class="font-effect-fire-animation"><h6 style="color: red"><strong>1° lugar</strong></h6></td><td class="font-effect-fire-animation"><h6><strong style="color: black">Javier</strong></h6></td>
-                        </tr>
-                       
+                        </c:forEach>                       
                     </tbody>
                 </table>
             </div>
