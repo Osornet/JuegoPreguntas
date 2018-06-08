@@ -27,6 +27,10 @@
             <source src="Sonidos/juego-de-tronos-truth.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
         </audio>
+        <audio id="seleccion">
+            <source src="Sonidos/vida efecto.mp3" type="audio/mpeg">
+            Your browser does not support the <code>audio</code> tag.
+        </audio>
 
 <!--juego.pre-->
        

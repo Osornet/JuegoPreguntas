@@ -22,7 +22,14 @@
         <title>JUEGO PREGUNTAS</title>
     </head>
     <body id="fondo">
-
+        <audio id="buena">
+            <source src="Sonidos/correct-victory.mp3" type="audio/mpeg">
+            Your browser does not support the <code>audio</code> tag.
+        </audio>
+        <audio id="mala">
+            <source src="Sonidos/mario pierde vida.mp3" type="audio/mpeg">
+            Your browser does not support the <code>audio</code> tag.
+        </audio>
         <!--Valida si cambio de nivel el jugador anterior que respondio para mostrar
             Alerta-->
 

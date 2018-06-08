@@ -127,6 +127,8 @@ $(document).ready(function () {
                 confirmButtonColor: 'green'
                 //confirmButtonText: 'yupi!',
             });
+            var x = document.getElementById('buena');
+            x.play();
         } else if($('#res').val() === 'incorrecta'){
             swal({
                 type: 'error',
@@ -135,6 +137,8 @@ $(document).ready(function () {
                 confirmButtonColor: 'red',
                 //confirmButtonText: 'nooo',
             });
+            var x = document.getElementById('mala');
+            x.play();
         }
     }
 
@@ -156,19 +160,26 @@ $(document).ready(function () {
     $("#jugador1").click(function () {
         //mostrarModal(1);
         //mostrarCampos(1);
-
+        var x = document.getElementById('seleccion');
+        x.play();
     });
 
     $("#jugador2").click(function () {
         //mostrarModal(2);
+        var x = document.getElementById('seleccion');
+        x.play();
     });
 
     $("#jugador3").click(function () {
         //mostrarModal(3);
+        var x = document.getElementById('seleccion');
+        x.play();
     });
 
     $("#jugador4").click(function () {
         //mostrarModal(4);
+        var x = document.getElementById('seleccion');
+        x.play();
     });
 
 
