@@ -20,6 +20,10 @@
         <title>JSP Page</title>
     </head>
     <body id="victoria">
+        <audio preload="auto" autoplay loop>
+            <source src="Sonidos/triunfo.mp3" type="audio/mpeg">
+            Your browser does not support the <code>audio</code> tag.
+        </audio>
         <br>  
         <div class="row center-align">
             <div class="col s12 m12">

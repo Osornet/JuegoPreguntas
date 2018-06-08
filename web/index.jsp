@@ -24,7 +24,6 @@
     <body id="fondo">
 
         <audio preload="auto" autoplay loop>
-
             <source src="Sonidos/juego-de-tronos-truth.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
         </audio>
