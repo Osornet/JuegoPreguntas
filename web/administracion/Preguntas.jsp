@@ -1,7 +1,7 @@
 <%-- 
     Document   : Preguntas
     Created on : 12/05/2018, 05:04:23 PM
-    Author     : osorn
+    Author     : JAVIER
 --%>
 <script src="../JS/jquery-3.3.1.min.js" type="text/javascript"></script>
 <script src="../JS/Preguntas.js" type="text/javascript"></script>

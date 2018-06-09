@@ -1,7 +1,7 @@
 <%-- 
     Document   : FormularioEditarPregunta
     Created on : 16/05/2018, 02:25:19 PM
-    Author     : osorn
+    Author     : JAVIER
 --%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>

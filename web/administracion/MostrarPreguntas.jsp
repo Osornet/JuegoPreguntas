@@ -1,7 +1,7 @@
 <%-- 
     Document   : MostrarPreguntas
     Created on : 15/05/2018, 01:01:05 AM
-    Author     : osorn
+    Author     : JAVIER
 --%>
 <link href="../CSS/materialize/css/materialize.min.css" rel="stylesheet" type="text/css"/>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">

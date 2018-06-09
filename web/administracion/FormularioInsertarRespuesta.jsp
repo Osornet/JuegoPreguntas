@@ -1,7 +1,7 @@
 <%-- 
     Document   : FormularioInsertarRespuesta
     Created on : 17/05/2018, 07:08:40 PM
-    Author     : osorn
+    Author     : JAVIER
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
