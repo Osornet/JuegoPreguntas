@@ -236,8 +236,8 @@
                             </tbody>
                         </table>
                     </div>   
-                        <div class="row"></div>
-                        <div class="row">
+                    <div class="row"></div>
+                    <div class="row">
                     <a class="btn-large accent-color" href="index.jsp" style="color: white"><strong>Terminar Juego</strong><i class="material-icons right">replay</i></a>       
                     </div>
             </div>
