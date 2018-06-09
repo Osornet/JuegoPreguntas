@@ -16,9 +16,10 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <head>
+    <head>        
+        <link rel="shortcut icon" href="Imagenes/cohete.png" type="image/x-icon" />
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Juego Preguntas</title>
+        <title>Juego Preguntas</title>        
     </head>
 
     <body id="fondo">

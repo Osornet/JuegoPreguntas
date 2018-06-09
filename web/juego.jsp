@@ -18,8 +18,9 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="shortcut icon" href="Imagenes/cohete.png" type="image/x-icon" />
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JUEGO PREGUNTAS</title>
+        <title>Juego Preguntas</title>
     </head>
     <body id="fondo">
         <audio id="buena">
@@ -30,12 +31,8 @@
             <source src="Sonidos/mario pierde vida.mp3" type="audio/mpeg">
             Your browser does not support the <code>audio</code> tag.
         </audio>
-        <!--Valida si cambio de nivel el jugador anterior que respondio para mostrar
-            Alerta-->
-
 
         <input id="nivel" name="nivel" type="hidden" value="<c:out value='${sessionScope.cambioNivel}'/>"/>
-
 
         <div class="row center-align">
             <div class="col m4 s4">
@@ -72,50 +69,12 @@
                                     </label>
                                 </div>
                             </div>
-
-
-                            <!--<div class="row center-align" style="margin-bottom: 0px;"> 
-                                <div class="col m2 s2">                 
-                                    <label>
-                                        <input name="res" type="radio" checked />
-                                        <span>A.</span>
-                                    </label>
-                                </div>
-                                <div class="col m3 s3">
-                                    <img src="Imagenes/preguntas/imagen transparente.png" alt=""/>
-                                </div>
-                            </div>
-                            <div class="row" style="margin-bottom: 0px;"> 
-                                <div class="col m2 s2">
-                                    <label>
-                                        
-                                        <input name="res" type="radio"/>
-                                        <span>B.</span>
-                                    </label>
-                                </div>
-                                <div class="col m3 s3">
-                                    <img src="Imagenes/pregunta1/imagen transparente.png" alt=""/>
-                                </div>
-                            </div>
-                            <div class="row" style="margin-bottom: 0px;"> 
-                                <div class="col m2 s2">
-                                    <label>
-                                        
-                                        <input name="res" type="radio"/>
-                                        <span>C.</span>
-                                    </label>
-                                </div>
-                                <div class="col m3 s3">
-                                    <img src="Imagenes/pregunta1/imagen transparente.png" alt=""/>
-                                </div>
-                            </div>
-                            -->
+                            
                         </div><br>
                         <div class="card-action" style="background-color: #FF4081">
                             <button id="enviar" class="btn-large waves-effect accent-color" disabled><h5><strong>RESPONDER</strong></h5></button>
                         </div>
                     </form>
-
 
                     <input id="res" name="res" type="hidden" value="${sessionScope.mensaje}"/>
                 </div>
@@ -131,7 +90,7 @@
                     <h3 class="white-text"><c:out value="Nivel ${sessionScope.juego.jugadorActual.nivel}"/></h3>
 
                 </div><br>
-                <!-- <button class="btn-large black-text yellow" id="dado"><i class="material-icons right" id="dado">sentiment_very_satisfied</i><strong>LANZAR DADO</strong></button> -->
+               
                 <button class="btn-large waves-effect yellow black-text" id="dado"><h5><strong>LANZAR DADO</strong></h5></button>
                 <br><br>
                 <div>
@@ -164,8 +123,7 @@
                 </table><br><br>
                 <div class="row"> 
                     <div class="col m4 s4">
-                        <!--<img src="Imagenes/tablero.png" alt=""/>
-                        <input type="hidden" id="res" value=""/>-->
+                       
                         <c:set var="i" value="${0}"/>
                         <c:forEach var="jugador" items="${sessionScope.juego.listaDeJugadores}">
                             <input type="hidden" id="nombre${i}" value="${jugador.nombre}"/> 
@@ -277,8 +235,11 @@
                                 </tr>
                             </tbody>
                         </table>
-                    </div>                                
-                
+                    </div>   
+                        <div class="row"></div>
+                        <div class="row">
+                    <a class="btn-large accent-color" href="index.jsp" style="color: white"><strong>Terminar Juego</strong><i class="material-icons right">replay</i></a>       
+                    </div>
             </div>
         </div>
     </body>

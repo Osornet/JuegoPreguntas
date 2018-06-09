@@ -12,8 +12,9 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="shortcut icon" href="Imagenes/cohete.png" type="image/x-icon" />
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Jugadores</title>
     </head>
     <body id="fondo">
         <audio preload="auto" autoplay loop>

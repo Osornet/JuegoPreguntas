@@ -13,7 +13,7 @@ $(document).ready(function () {
         }
         var nombre = $("#nombre"+i).val();
         var posicion = $("#posicion"+i).val();
-        $('#p'+posicion+'').append(nombre+"<br/>");
+        $('#p'+posicion+'').append("<strong>"+nombre+"</strong><br/>");
         
     }
     
@@ -38,18 +38,6 @@ $(document).ready(function () {
     $("#dado").click(function (event) {
 
         $("#enviar").removeAttr("disabled");
-//var img = $('<img>');
-//img.attr('src', imageURL);
-//img.appendTo('#randomDiv');function mostrarimagen(){
-
-//var imagen = "  "
-
-
-
-//document.write('<img id="myPhoto" width="50" height="50">');
-
-//document.getElementById("myPhoto").src=imagen;
-
 
         swal({
             title: 'Lanzando Dado...!',
@@ -93,17 +81,9 @@ $(document).ready(function () {
     });
 
     $("#enviar").click(function (event) {
-        //if ($('#res').val() !== '') {
+       
             $('#responder').submit();
-        //} 
-        //else {
-        //    swal({
-        //        type: 'warning',
-        //        title: '! Debes lanzar el dado ¡ :)',
-        //        text: '',
-        //        confirmButtonColor: 'red',
-        //    })
-        //}
+      
     });
     //Muestra alert si subio de nivel
     if ($('#nivel').val() !== "") {
@@ -132,7 +112,7 @@ $(document).ready(function () {
         } else if($('#res').val() === 'incorrecta'){
             swal({
                 type: 'error',
-                title: 'Oops...Respuesta Incorrecta :(',
+                title: 'Oops... Respuesta Incorrecta :(',
                 text: '',
                 confirmButtonColor: 'red',
                 //confirmButtonText: 'nooo',
@@ -215,7 +195,6 @@ function mostrarModal(cantidad) {
 
             var inputs = document.getElementsByName('jugadores');
             var nombres = [];
-            // console.log(jugadores);
             var datos;
             for (i = 0; i < inputs.length; i++) {
                 console.log(inputs[i].value);
@@ -248,9 +227,7 @@ function mostrarModal(cantidad) {
                 //  document.getElementById('swal-input2').value
                 //];
             }
-
         }
-
     });
     if (!val)
         swal('Debes escribir todos los nombres :(');

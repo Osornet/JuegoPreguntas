@@ -16,8 +16,9 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="shortcut icon" href="Imagenes/cohete.png" type="image/x-icon" />
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>!Ganador¡</title>
     </head>
     <body id="victoria">
         <audio preload="auto" autoplay loop>
@@ -56,7 +57,7 @@
                     </tbody>
                 </table>
             </div>
-                        <a class="btn-large dark-primary-color" href="index.jsp" style="color: white"><strong>Nuevo Juego</strong><i class="material-icons right">gamepad</i></a> 
+            <a class="btn-large dark-primary-color" href="index.jsp" style="color: white"><strong>Nuevo Juego</strong><i class="material-icons right">gamepad</i></a> 
         </div>
 
 
