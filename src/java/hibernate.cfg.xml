@@ -42,10 +42,10 @@ Contributor(s):
 <hibernate-configuration>
   <session-factory>
     <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-    <property name="connection.url">jdbc:mysql://localhost/juego?useSSL=false</property>
-    <property name="connection.username">root</property>
-    <property name="connection.password">1234</property>
-    <!--Recuedele cambiarle la contraseña cuando lo vaya a utilizar-->
+    <!--<property name="connection.url">jdbc:mysql://localhost/juego?useSSL=false</property>-->
+    <property name="connection.url">jdbc:mysql://sql10.freemysqlhosting.net/sql10242073?useSSL=false</property>
+    <property name="connection.username">sql10242073</property>
+    <property name="connection.password">1flgIZd7kC</property>
     <property name="connection.pool_size">30</property>
     <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
     <property name="show_sql">true</property>
