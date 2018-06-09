@@ -1,7 +1,7 @@
 <%-- 
     Document   : Victoria
     Created on : 29/05/2018, 12:08:09 AM
-    Author     : osorn
+    Author     : GABY
 --%>
 <link href="CSS/materialize/css/materialize.min.css" rel="stylesheet" type="text/css"/>
 <link href="CSS/palette.css" rel="stylesheet" type="text/css"/>

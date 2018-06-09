@@ -9,11 +9,9 @@ import com.juegoPreguntas.modelo.persistencia.daos.PreguntaDAO;
 import com.juegoPreguntas.modelo.persistencia.daos.hibernate.PreguntaDAOImp;
 import java.util.List;
 
-
-
 /**
  *
- * @author osorn
+ * @author GABY
  */
 
 public class Jugador implements Comparable<Jugador>{

@@ -1,7 +1,7 @@
 <%-- 
     Document   : index
     Created on : 10/05/2018, 03:06:05 PM
-    Author     : osorn
+    Author     : GABY
 --%>
 <link href="CSS/materialize/css/materialize.min.css" rel="stylesheet" type="text/css"/>
 <link href="CSS/inicio.css" rel="stylesheet" type="text/css"/>

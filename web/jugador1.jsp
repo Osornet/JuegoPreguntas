@@ -1,7 +1,7 @@
 <%-- 
     Document   : jugador1
     Created on : 28/05/2018, 11:10:49 AM
-    Author     : JAVIER
+    Author     : GABY
 --%>
 <link href="CSS/inicio.css" rel="stylesheet" type="text/css"/>
 <link href="CSS/materialize/css/materialize.min.css" rel="stylesheet" type="text/css"/>

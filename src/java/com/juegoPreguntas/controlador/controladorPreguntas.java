@@ -7,7 +7,6 @@ package com.juegoPreguntas.controlador;
 
 import com.juegoPreguntas.controlador.acciones.Accion;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author osorn
+ * @author GABY
  */
 @WebServlet(name = "controladorPreguntas", urlPatterns = {"*.pre"})
 public class controladorPreguntas extends HttpServlet {

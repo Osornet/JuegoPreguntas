@@ -11,7 +11,7 @@ import org.hibernate.cfg.Configuration;
 
 /**
  *
- * @author osorn
+ * @author GABY
  */
 public class HibernateHelper {
     private static final SessionFactory sessionFactory = buildSessionFactory();

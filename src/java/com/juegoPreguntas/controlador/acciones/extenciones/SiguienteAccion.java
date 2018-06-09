@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author osorn
+ * @author GABY
  */
 public class SiguienteAccion extends Accion {
 

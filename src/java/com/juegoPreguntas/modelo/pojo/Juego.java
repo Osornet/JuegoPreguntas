@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  *
- * @author osorn
+ * @author GABY
  */
 public class Juego {
     private int turno;

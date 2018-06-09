@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author osorn
+ * @author GABY
  */
 public class CargarJuegoAccion extends Accion {
 

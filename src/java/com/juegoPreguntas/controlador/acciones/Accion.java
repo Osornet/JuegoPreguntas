@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author osorn
+ * @author GABY
  */
 public abstract class Accion {
     
