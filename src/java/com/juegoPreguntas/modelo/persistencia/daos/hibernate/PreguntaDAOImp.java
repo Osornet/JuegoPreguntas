@@ -37,8 +37,7 @@ public class PreguntaDAOImp implements PreguntaDAO {
     @Override
     public void cerrarSession() {
         if (session != null) {
-            session.close();
-            
+            session.close();            
         }
     }
 
@@ -56,8 +55,9 @@ public class PreguntaDAOImp implements PreguntaDAO {
           System.out.println(e.getMessage());
           if(transaccion != null)
             transaccion.rollback();
-          this.cerrarSession();
+            //this.cerrarSession();
         }
+        this.cerrarSession();
     }
 
     @Override
@@ -74,8 +74,8 @@ public class PreguntaDAOImp implements PreguntaDAO {
           System.out.println(e.getMessage());
           if(transaccion != null)
             transaccion.rollback();
-          this.cerrarSession();
         }
+        this.cerrarSession();
     }
 
     @Override
@@ -92,8 +92,8 @@ public class PreguntaDAOImp implements PreguntaDAO {
           System.out.println(e.getMessage());
           if(transaccion != null)
             transaccion.rollback();
-          this.cerrarSession();
         }
+        this.cerrarSession();
     }
     //Obtiene una pregunta
     @Override
@@ -104,8 +104,8 @@ public class PreguntaDAOImp implements PreguntaDAO {
         pregunta = (Pregunta)this.session.get(Pregunta.class, id);
         }catch(HibernateException e){
             System.out.println(e.getMessage());
-            this.cerrarSession();
         }
+        this.cerrarSession();
         return pregunta;
     }
     //Hacer metodo para generar un registro aleatorio
@@ -121,8 +121,8 @@ public class PreguntaDAOImp implements PreguntaDAO {
         pregunta =(Pregunta)consulta.list().get(0);
         }catch(HibernateException e){
             System.out.println(e.getMessage());
-            this.cerrarSession();
         }
+        this.cerrarSession();
         return pregunta;
     }
     //Llamar desde ese metodo a obtenerporclave y retornar la pregunta
@@ -139,8 +139,8 @@ public class PreguntaDAOImp implements PreguntaDAO {
         listaDePreguntas = consulta.list();
         }catch(HibernateException e){
             System.out.println(e.getMessage());
-            this.cerrarSession();
         }
+        this.cerrarSession();
         return listaDePreguntas;
     }
     // metodo para tener un puñado de preguntas aleatorias de acuerdo a los parametros
@@ -155,8 +155,8 @@ public class PreguntaDAOImp implements PreguntaDAO {
         listaDePreguntas =(List<Pregunta>)consulta.list();
         }catch(HibernateException e){
             System.out.println(e.getMessage());
-            this.cerrarSession();
         }
+        this.cerrarSession();
         return listaDePreguntas;
     }
 
@@ -171,14 +171,14 @@ public class PreguntaDAOImp implements PreguntaDAO {
         listaDePreguntas =(List<Pregunta>)consulta.list();
         }catch(HibernateException e){
             System.out.println(e.getMessage());
-            this.cerrarSession();
         }
+        this.cerrarSession();
         return listaDePreguntas;
     }
 
     @Override
     public List<Pregunta> seleccionarPreguntasPorNivel(int nivel, int numeroPreguntas) {
-         List<Pregunta> listaDePreguntas = null;
+        List<Pregunta> listaDePreguntas = null;
         String consultaString = "from Pregunta pre where nivel=:nivel order by rand()";
         try{
         this.abrirSession();
@@ -188,11 +188,9 @@ public class PreguntaDAOImp implements PreguntaDAO {
         listaDePreguntas =(List<Pregunta>)consulta.list();
         }catch(HibernateException e){
             System.out.println(e.getMessage());
-            this.cerrarSession();
+            //this.cerrarSession();
         }
+        this.cerrarSession();
         return listaDePreguntas;
     }
-
-   
-
 }

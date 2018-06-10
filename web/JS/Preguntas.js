@@ -37,6 +37,7 @@ $(document).ready(function () {
     });
     $("#dado").click(function (event) {
 
+        $("#dado").attr("disabled", true);
         $("#enviar").removeAttr("disabled");
 
         swal({
