@@ -98,7 +98,12 @@ public class Jugador implements Comparable<Jugador>{
         this.preguntas = preguntaDAO.seleccionarPreguntasPorNivel(nivel, 30);
         else if(nivel == 1)
         this.preguntas = preguntaDAO.seleccionarPreguntasPorNivel(nivel, 40);
-        //preguntaDAO.cerrarSession();
+        
+        byte i = 1;
+        for(Pregunta p : this.preguntas){
+            System.out.println("Numero: "+ i++ +" Id Pregunta: "+p.getId());
+        }
+        
     }
 
     @Override

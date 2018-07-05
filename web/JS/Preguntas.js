@@ -86,13 +86,15 @@ $(document).ready(function () {
             $('#responder').submit();
       
     });
-    //Muestra alert si subio de nivel
-    if ($('#nivel').val() !== "") {
+    //Muestra alert si subio de nivel *
+    if ($('#nivel').val() === 'true') {
+        console.log('Subio de nivel');
+        var nivel = $('#nivel').val();
         
         swal({
                 type: 'success',
-                title: $('#nivel').val(),
-                text: '<h4></h1>Felicitaciones :)</h4>',
+                title: '<h4></h1>Felicitaciones :)</h4>',
+                text: '! '+nivel[1]+' ¡ Haz subido al nivel: '+nivel[2],
                 confirmButtonColor: 'green'
                 //confirmButtonText: 'yupi!',
             });        
@@ -107,7 +109,7 @@ $(document).ready(function () {
                 text: '',
                 confirmButtonColor: 'green'
                 //confirmButtonText: 'yupi!',
-            });
+            }); //Colocar modal de cambio de nivel al dar click en boton
             var x = document.getElementById('buena');
             x.play();
         } else if($('#res').val() === 'incorrecta'){
@@ -115,7 +117,7 @@ $(document).ready(function () {
                 type: 'error',
                 title: 'Oops... Respuesta Incorrecta :(',
                 text: '',
-                confirmButtonColor: 'red',
+                confirmButtonColor: 'red'
                 //confirmButtonText: 'nooo',
             });
             var x = document.getElementById('mala');

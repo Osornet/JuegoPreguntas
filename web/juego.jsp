@@ -31,8 +31,8 @@
             <source src="Sonidos/mario pierde vida.mp3" type="audio/mpeg">
             Your browser does not support the <code>audio</code> tag.
         </audio>
-
-        <input id="nivel" name="nivel" type="hidden" value="<c:out value='${sessionScope.cambioNivel}'/>"/>
+        <!--Nivel-->
+        <input id="nivel" name="nivel" type="hidden" value="<c:out value="${sessionScope.cambioNivel[0]}"/>"/>
 
         <div class="row center-align">
             <div class="col m4 s4">

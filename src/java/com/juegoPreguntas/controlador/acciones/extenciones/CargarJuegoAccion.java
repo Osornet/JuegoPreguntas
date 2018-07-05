@@ -8,6 +8,7 @@ package com.juegoPreguntas.controlador.acciones.extenciones;
 import com.juegoPreguntas.controlador.acciones.Accion;
 import com.juegoPreguntas.modelo.pojo.Juego;
 import com.juegoPreguntas.modelo.pojo.Jugador;
+import com.juegoPreguntas.modelo.pojo.Pregunta;
 import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
@@ -39,9 +40,11 @@ public class CargarJuegoAccion extends Accion {
         request.getSession().setAttribute("juego", juego);
         request.getSession().setAttribute("preguntaActual", juego.getJugadorActual().getPreguntaActual());
         request.getSession().setAttribute("mensaje", "");
-        System.out.println("El mensaje de respuesta es: "+request.getSession().getAttribute("mensaje"));
         
         //request.setAttribute("cambioNivel", "no");
+        Pregunta preguntaActual = (Pregunta)request.getSession().getAttribute("preguntaActual");
+        System.out.println("Jugador: "+nombreJugadores[0]);
+        System.out.println("La respuesta es: "+preguntaActual.getRespuesta());
         
         return "juego.jsp";
     }
